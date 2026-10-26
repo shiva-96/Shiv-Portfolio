@@ -1,1 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Import Material Core
+@use '@angular/material' as mat;
+@use 'app/styles/common-style' as cs;
+
+// Include Material Core
+@include mat.core();
+
+// Note: Custom theming is handled via common-style.scss design tokens
+// Material components will use default dark theme with custom CSS overrides
+
+html,
+body {
+  background: cs.$color-bg;
+  color: cs.$color-text-primary;
+  height: 100%;
+}
+
+// Material Component Overrides
+::ng-deep {
+  // Text color for all text elements
+  .mdc-text-field {
+    color: cs.$color-text-primary;
+  }
+
+  // Button color adjustments
+  .mat-button,
+  .mat-raised-button,
+  .mat-stroked-button {
+    font-family: cs.$font-body;
+  }
+
+  // Chip styling
+  .mat-chip {
+    font-family: cs.$font-body;
+  }
+
+  // Menu styling
+  .mat-menu-panel {
+    background: cs.$color-surface !important;
+  }
+
+  .mat-menu-item {
+    color: cs.$color-text-primary !important;
+  }
+
+  // Scrollbar styling
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: cs.$color-border;
+    border-radius: 4px;
+
+    &:hover {
+      background: cs.$color-text-muted;
+    }
+  }
+
+  // Make Material animations work with our design
+  .mat-ripple-element {
+    background-color: cs.$color-accent !important;
+    opacity: 0.15 !important;
+  }
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: cs.$font-display;
+  font-weight: cs.$font-weight-bold;
+}
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Selection color
+::selection {
+  background: cs.$color-accent;
+  color: cs.$color-text-on-accent;
+}
+
+::-moz-selection {
+  background: cs.$color-accent;
+  color: cs.$color-text-on-accent;
+}
+

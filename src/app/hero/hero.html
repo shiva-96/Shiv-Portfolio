@@ -1,0 +1,61 @@
+<section id="hero" class="hero-section">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        <span class="tag-text">Software Engineer</span>
+        <span class="tag-divider">·</span>
+        <span class="tag-company">Deloitte</span>
+      </div>
+
+      <h1 class="hero-title">
+        {{ heroTitle }}<br />
+        <em>{{ heroHighlight }}</em><br />
+        {{ heroSubtitle }}
+      </h1>
+
+      <p class="hero-description">
+        {{ description }}
+      </p>
+
+      <div class="hero-actions">
+        <button mat-raised-button class="btn-primary" (click)="handleScrollToContact()">
+          <mat-icon>arrow_forward</mat-icon>
+          Get In Touch
+        </button>
+        <button mat-stroked-button class="btn-ghost">
+          <mat-icon>download</mat-icon>
+          Download CV
+        </button>
+      </div>
+
+      <div class="hero-stats">
+        <div *ngFor="let stat of stats" class="stat-item">
+          <div class="stat-number">{{ stat.number }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="hero-image-wrap">
+      <div class="img-frame">
+        <div class="img-inner">
+          <!-- Placeholder Avatar -->
+          <div class="avatar-placeholder">
+            <div class="avatar-bg-circle"></div>
+            <div class="avatar-silhouette">
+              <div class="avatar-head"></div>
+              <div class="avatar-body"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating badges -->
+      <div class="float-tag tag-1">Angular</div>
+      <div class="float-tag tag-2">TypeScript</div>
+      <div class="float-tag tag-3">RxJS</div>
+    </div>
+  </div>
+</section>

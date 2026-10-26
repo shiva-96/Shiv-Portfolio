@@ -1,0 +1,104 @@
+@use '../../styles/common-style' as cs;
+
+.project-card {
+  background: cs.$color-card;
+  border: cs.$border-width solid cs.$color-border;
+  border-radius: cs.$radius-2xl;
+  padding: cs.$card-padding-lg;
+  transition: all cs.$duration-normal cs.$easing;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: cs.$gradient-card-top-line;
+    opacity: 0;
+    transition: opacity cs.$duration-slow cs.$easing;
+  }
+
+  &:hover {
+    border-color: cs.$color-accent-border;
+    transform: cs.$hover-lift;
+    box-shadow: cs.$shadow-card-hover;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.proj-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: cs.$space-md;
+}
+
+.proj-icon {
+  font-size: 28px;
+  display: block;
+}
+
+.proj-badge {
+  font-size: cs.$font-size-xs;
+  padding: cs.$space-xs cs.$space-md;
+  background: cs.$color-accent-glow;
+  border: cs.$border-width solid cs.$color-accent-border;
+  color: cs.$color-accent;
+  border-radius: cs.$radius-full;
+}
+
+.proj-title {
+  font-family: cs.$font-display;
+  font-size: cs.$font-size-lg;
+  font-weight: cs.$font-weight-bold;
+  color: cs.$color-text-primary;
+  margin: 0 0 cs.$space-md 0;
+}
+
+.proj-desc {
+  font-size: cs.$font-size-base;
+  color: cs.$color-text-muted;
+  line-height: cs.$line-height-relaxed;
+  margin: 0 0 cs.$space-lg 0;
+}
+
+.proj-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: cs.$grid-gap-sm;
+  margin-bottom: cs.$space-lg;
+}
+
+.tech-tag {
+  display: inline-block;
+  font-size: cs.$font-size-xs;
+  padding: cs.$space-xs cs.$space-sm;
+  border: cs.$border-width solid cs.$color-border;
+  border-radius: cs.$radius-sm;
+  color: cs.$color-text-muted;
+  background: transparent;
+  transition: all cs.$duration-fast cs.$easing;
+
+  &:hover {
+    border-color: cs.$color-accent;
+    color: cs.$color-accent;
+  }
+}
+
+.proj-link {
+  color: cs.$color-accent;
+  opacity: 0.6;
+  transition: all cs.$duration-fast cs.$easing;
+
+  &:hover {
+    opacity: 1;
+    transform: translateX(2px) translateY(-2px);
+  }
+}

@@ -1,0 +1,12 @@
+@use './styles/common-style' as cs;
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+// Ensure smooth transitions between sections
+section {
+  scroll-margin-top: cs.$header-height;
+}

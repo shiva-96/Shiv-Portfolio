@@ -1,0 +1,277 @@
+// ============================================================
+//  Global SCSS design tokens for Portfolio project
+//  Import this file at the top of every component/style file:
+// ============================================================
+
+
+// ─────────────────────────────────────────
+// 🎨 COLORS — Backgrounds
+// ─────────────────────────────────────────
+$body-html-bg:          #000000;  // Main page/body background
+$color-bg:              #0a0a0f;  // Main page/body background
+$color-surface:         #111118;  // Slightly lighter surface (e.g. code blocks, panels)
+$color-card:            #13131d;  // Card & section box backgrounds (skill cards, project cards)
+
+
+// ─────────────────────────────────────────
+// 🎨 COLORS — Accent (Primary Brand Color)
+// ─────────────────────────────────────────
+
+$color-accent:          #c8f542;  // Primary accent — CTAs, active nav, highlights, stat numbers
+$color-accent-hover:    #d4f760;  // Hover state of primary accent buttons
+$color-accent-secondary:#42f5c8;  // Secondary accent — role labels, tag in hero, secondary badges
+$color-accent-glow:     rgba(200, 245, 66, 0.08);  // Subtle accent background glow (card hover bg)
+$color-accent-border:   rgba(200, 245, 66, 0.20);  // Accent-tinted border on hover (card, nav item)
+
+
+// ─────────────────────────────────────────
+// 🎨 COLORS — Text
+// ─────────────────────────────────────────
+
+$color-text-primary:    #e8e8f0;  // Main readable body text, headings, nav links
+$color-text-muted:      #5a5a7a;  // Secondary/helper text — dates, labels, descriptions
+$color-text-on-accent:  #0a0a0f;  // Text placed on top of accent background (e.g. primary button label)
+
+
+// ─────────────────────────────────────────
+// 🎨 COLORS — Borders
+// ─────────────────────────────────────────
+
+$color-border:          #1e1e2e;  // Default border for cards, dividers, nav items, inputs
+$color-border-hover:    rgba(200, 245, 66, 0.20);  // Border on hover state for interactive elements
+
+
+// ─────────────────────────────────────────
+// 🔤 TYPOGRAPHY — Font Families
+// ─────────────────────────────────────────
+
+$font-display:          'Syne', sans-serif;   // Display/heading font — h1, h2, company names, logo
+$font-body:             'DM Mono', monospace; // Body font — paragraphs, nav links, tags, labels
+$font-accent:           'Lora', serif;        // Italic accent font — decorative italic word in hero h1
+
+
+// ─────────────────────────────────────────
+// 🔤 TYPOGRAPHY — Font Sizes
+// ─────────────────────────────────────────
+
+$font-size-xs:          10px;  // Section labels (e.g. "01 · ABOUT"), tag text, letter-spaced labels
+$font-size-sm:          11px;  // Dates, role subtitles, status pill text, footer links
+$font-size-base:        12px;  // Card descriptions, nav links, button text, exp descriptions
+$font-size-md:          13px;  // Default body text size, hero sub-paragraph
+$font-size-lg:          16px;  // Project card titles, experience company secondary text
+$font-size-xl:          18px;  // Company name in experience, logo text
+$font-size-2xl:         22px;  // Logo display size (alternate)
+$font-size-3xl:         28px;  // Contact section heading, stat numbers
+$font-size-4xl:         36px;  // Contact section large heading
+$font-size-5xl:         48px;  // Hero h1 italic accent word (Lora font)
+$font-size-6xl:         54px;  // Hero h1 main headline (Syne font)
+
+
+// ─────────────────────────────────────────
+// 🔤 TYPOGRAPHY — Font Weights
+// ─────────────────────────────────────────
+
+$font-weight-light:     300;  // Light text used in DM Mono for subtle labels
+$font-weight-regular:   400;  // Default body weight — paragraphs, descriptions
+$font-weight-medium:    500;  // Slightly emphasized — button labels, mono highlights
+$font-weight-bold:      700;  // Card titles, skill names, nav active state
+$font-weight-black:     800;  // Hero h1, logo, section headings (Syne display font)
+
+
+// ─────────────────────────────────────────
+// 🔤 TYPOGRAPHY — Line Heights
+// ─────────────────────────────────────────
+
+$line-height-tight:     1.0;  // Hero h1 headline (large display text, no gap needed)
+$line-height-snug:      1.2;  // Contact heading, section titles
+$line-height-normal:    1.6;  // Default body line height
+$line-height-relaxed:   1.8;  // Card descriptions, hero sub-paragraph
+$line-height-loose:     1.9;  // Experience descriptions, contact sub-text
+
+
+// ─────────────────────────────────────────
+// 🔤 TYPOGRAPHY — Letter Spacing
+// ─────────────────────────────────────────
+
+$tracking-tight:        -2px;    // Hero h1 large display headings (Syne Black)
+$tracking-snug:         -0.5px;  // Logo, section subheadings
+$tracking-normal:        0px;    // Default — all body text
+$tracking-wide:          2px;    // Section labels (e.g. "02 · SKILLS") — uppercase small text
+
+
+// ─────────────────────────────────────────
+// 📐 SPACING — General Scale
+// ─────────────────────────────────────────
+
+$space-xs:              4px;   // Gap between dot and label, tag internal spacing
+$space-sm:              8px;   // Small gaps between inline elements, icon margins
+$space-md:              12px;  // Gap between tags, small internal card spacing
+$space-lg:              16px;  // Nav item gaps, project card gap, tag row gap
+$space-xl:              20px;  // Card icon bottom margin, minor section gaps
+$space-2xl:             24px;  // Card padding, section header margin-bottom
+$space-3xl:             32px;  // Timeline column padding, hero stats top padding
+$space-4xl:             40px;  // Page horizontal padding, hero padding top
+$space-5xl:             48px;  // Contact grid gap, hero stats margin
+$space-6xl:             60px;  // Hero grid column gap
+$space-7xl:             72px;  // Section vertical padding (top & bottom)
+
+
+// ─────────────────────────────────────────
+// 📐 SPACING — Semantic Aliases
+// ─────────────────────────────────────────
+
+$page-padding-x:        40px;  // Left/right padding of the main .page wrapper
+$section-gap:           72px;  // Top & bottom padding for every <section>
+$card-padding:          24px;  // Inner padding for standard cards (skill, project)
+$card-padding-lg:       26px;  // Inner padding for larger project cards
+
+
+// ─────────────────────────────────────────
+// 📏 SIZING — Layout
+// ─────────────────────────────────────────
+
+$max-width:             1100px;  // Max width of the entire page/content wrapper
+$header-height:         62px;    // Fixed height of the sticky top header/navbar
+
+
+// ─────────────────────────────────────────
+// 📏 SIZING — Hero Image / Avatar
+// ─────────────────────────────────────────
+
+$avatar-width:          300px;  // Width of the profile image frame in hero section
+$avatar-height:         360px;  // Height of the profile image frame in hero section
+
+
+// ─────────────────────────────────────────
+// 📏 SIZING — Buttons
+// ─────────────────────────────────────────
+
+$btn-padding-y:         10px;  // Vertical padding — primary & ghost buttons
+$btn-padding-x:         22px;  // Horizontal padding — primary & ghost buttons
+$btn-sm-padding-y:       7px;  // Vertical padding — small buttons (e.g. header Resume btn)
+$btn-sm-padding-x:      16px;  // Horizontal padding — small buttons
+
+
+// ─────────────────────────────────────────
+// 📏 SIZING — Decorative Elements
+// ─────────────────────────────────────────
+
+$dot-size:               6px;  // Status/pulse dot (e.g. "Available" indicator in header)
+$dot-size-lg:           10px;  // Larger timeline dot in experience section
+
+
+// ─────────────────────────────────────────
+// 📏 SIZING — Experience Timeline
+// ─────────────────────────────────────────
+
+$timeline-col-width:   160px;  // Width of the date/time column in the experience timeline
+
+
+// ─────────────────────────────────────────
+// 🔲 BORDERS — Width & Style
+// ─────────────────────────────────────────
+
+$border-width:           1px;    // Universal border width used across all components
+$border-style:           solid;  // Universal border style
+
+
+// ─────────────────────────────────────────
+// 🔲 BORDERS — Border Radius
+// ─────────────────────────────────────────
+
+$radius-sm:              4px;   // Tags, small badges, code-like elements
+$radius-md:              6px;   // Buttons, nav items, float tags
+$radius-lg:             10px;   // Skill cards, contact links
+$radius-xl:             12px;   // Skill & project cards (default card radius)
+$radius-2xl:            14px;   // Project cards (slightly larger cards)
+$radius-3xl:            18px;   // Image frame inner container
+$radius-full:          100px;   // Pill-shaped elements — status pill, hero tag, badge
+$radius-circle:         50%;    // Circular elements — dots, avatar head
+
+
+// ─────────────────────────────────────────
+// 🌑 SHADOWS & EFFECTS
+// ─────────────────────────────────────────
+
+$shadow-accent-glow:    0 0 8px rgba(200, 245, 66, 0.4);   // Glow on timeline dot, active indicators
+$shadow-card-hover:     0 8px 32px rgba(0, 0, 0, 0.3);    // Elevated shadow on card hover
+$backdrop-blur:         blur(14px);                         // Header backdrop blur (glassmorphism)
+$header-bg-blur:        rgba(10, 10, 15, 0.85);            // Semi-transparent header background
+
+
+// ─────────────────────────────────────────
+// 🌈 GRADIENTS
+// ─────────────────────────────────────────
+
+// Image frame gradient border (hero profile picture outer ring)
+$gradient-image-border: linear-gradient(135deg, #c8f542 0%, transparent 50%, #42f5c8 100%);
+
+// Top accent line on card hover (::before pseudo-element)
+$gradient-card-top-line: linear-gradient(90deg, #c8f542, transparent);
+
+// Avatar/image placeholder background
+$gradient-avatar-bg:    linear-gradient(160deg, #181824 0%, #0e0e18 100%);
+
+// Radial glow behind avatar in hero
+$gradient-accent-radial: radial-gradient(circle, rgba(200, 245, 66, 0.08) 0%, transparent 70%);
+
+
+// ─────────────────────────────────────────
+// ⚡ ANIMATION & TRANSITIONS
+// ─────────────────────────────────────────
+
+$duration-fast:         0.2s;         // Quick hover transitions — nav links, buttons, social icons
+$duration-normal:       0.25s;        // Standard card hover transitions
+$duration-slow:         0.3s;         // Card top-line fade, slower reveals
+$duration-float:        3s;           // Floating tag animation loop (infinite)
+$duration-pulse:        2s;           // Status dot pulse animation loop (infinite)
+
+$easing:                ease;         // Default easing for most transitions
+$easing-smooth:         ease-in-out;  // Smooth in-out for floating/pulse animations
+
+$hover-lift:            translateY(-2px);  // Subtle lift on card/button hover
+$hover-lift-lg:         translateY(-3px);  // Stronger lift on skill cards
+$float-distance:        6px;              // Max vertical travel for floating tag animation
+
+
+// ─────────────────────────────────────────
+// ✨ KEYFRAMES — Animation Definitions
+// ─────────────────────────────────────────
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+// ─────────────────────────────────────────
+// 📦 Z-INDEX LAYERS
+// ─────────────────────────────────────────
+
+$z-base:                0;    // Default stacking context
+$z-card:                1;    // Card inner elements, decorative overlays
+$z-float-tag:           3;    // Floating tech labels around the avatar image
+$z-header:              100;  // Sticky header — always on top of page content
+
+
+// ─────────────────────────────────────────
+// 🏗️ GRID & LAYOUT TEMPLATES
+// ─────────────────────────────────────────
+
+$grid-hero-cols:        1fr 340px;       // Hero section — text left, image right
+$grid-skills-cols:      repeat(4, 1fr);  // Skills section — 4 equal columns
+$grid-projects-cols:    1fr 1fr;         // Projects section — 2 equal columns
+$grid-contact-cols:     1fr 1fr;         // Contact section — text left, links right
+$grid-exp-cols:         160px 1fr;       // Experience timeline — date col + content col
+
+$grid-gap-sm:           14px;  // Gap between skill cards
+$grid-gap-md:           16px;  // Gap between project cards, nav items
+$grid-gap-lg:           48px;  // Contact grid column gap
+$grid-gap-hero:         60px;  // Gap between hero text and hero image

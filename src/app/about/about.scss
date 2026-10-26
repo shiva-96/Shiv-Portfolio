@@ -1,0 +1,108 @@
+@use '../styles/common-style' as cs;
+
+.about-section {
+  padding: cs.$section-gap 0;
+  border-bottom: cs.$border-width solid cs.$color-border;
+}
+
+.about-container {
+  max-width: cs.$max-width;
+  margin: 0 auto;
+  padding: 0 cs.$page-padding-x;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: cs.$space-lg;
+  margin-bottom: cs.$space-2xl;
+}
+
+.section-label {
+  font-size: cs.$font-size-xs;
+  color: cs.$color-text-muted;
+  letter-spacing: cs.$tracking-wide;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.section-line {
+  flex: 1;
+  height: cs.$border-width;
+  background: cs.$color-border;
+}
+
+.about-content {
+  max-width: 700px;
+}
+
+.about-title {
+  font-family: cs.$font-display;
+  font-size: cs.$font-size-4xl;
+  font-weight: cs.$font-weight-black;
+  color: cs.$color-text-primary;
+  margin: 0 0 cs.$space-lg 0;
+  letter-spacing: cs.$tracking-snug;
+}
+
+.about-description {
+  font-size: cs.$font-size-base;
+  color: cs.$color-text-muted;
+  line-height: cs.$line-height-relaxed;
+  margin: 0 0 cs.$space-3xl 0;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: cs.$space-2xl;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: cs.$space-md;
+  font-size: cs.$font-size-base;
+  color: cs.$color-text-muted;
+
+  .highlight-icon {
+    color: cs.$color-accent;
+    font-weight: cs.$font-weight-bold;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: cs.$space-4xl 0 cs.$space-5xl;
+  }
+
+  .about-title {
+    font-size: cs.$font-size-3xl;
+    font-weight: 400;
+    font-size: 48px;
+  }
+}
+
+.img-frame {
+    position: relative;
+    width: 300px;
+    height: 360px;
+}
+
+.img-frame::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: cs.$gradient-image-border;
+    z-index: 0;
+}

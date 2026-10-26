@@ -1,0 +1,25 @@
+<section id="experience" class="experience-section">
+  <div class="experience-container">
+    <div class="section-header">
+      <span class="section-label">03 · Experience</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="exp-list">
+      <div *ngFor="let exp of experiences; let last = last" class="exp-item" [class.last]="last">
+        <div class="exp-timeline">
+          <div class="exp-dot-outer"></div>
+          <p class="exp-date">{{ exp.date }}</p>
+        </div>
+        <div class="exp-content">
+          <h3 class="exp-company">{{ exp.company }}</h3>
+          <p class="exp-role">{{ exp.role }}</p>
+          <p class="exp-desc">{{ exp.description }}</p>
+          <div class="exp-tech">
+            <span *ngFor="let tech of exp.technologies" class="tech-badge">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

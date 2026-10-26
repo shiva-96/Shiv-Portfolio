@@ -1,0 +1,62 @@
+<header class="app-header">
+  <mat-toolbar class="header-toolbar">
+    <div class="logo-container">
+      <span class="logo">SHIV<span class="accent">.</span>PRASAD</span>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-desktop">
+      <button
+        mat-button
+        *ngFor="let link of navLinks"
+        [class.active]="activeLink() === link.value"
+        (click)="handleNavigationClicks(link.label)"
+        class="nav-link"
+      >
+        {{ link.label }}
+      </button>
+    </nav>
+
+    <div class="spacer"></div>
+
+    <!-- Right Section -->
+    <div class="header-right">
+      <!-- Status Chip -->
+      <mat-chip-set aria-label="Status">
+        <mat-chip class="status-chip">
+          <mat-icon class="dot">fiber_manual_record</mat-icon>
+          <span>Available</span>
+        </mat-chip>
+      </mat-chip-set>
+
+      <!-- Resume Button -->
+      <button
+        mat-raised-button
+        class="btn-resume"
+        (click)="downloadResume()"
+      >
+        <mat-icon>download</mat-icon>
+        Resume
+      </button>
+
+      <!-- Mobile Menu -->
+      <button
+        mat-icon-button
+        class="menu-toggle"
+        [matMenuTriggerFor]="mobileMenu"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <mat-menu #mobileMenu="matMenu">
+        <button
+          mat-menu-item
+          *ngFor="let link of navLinks"
+          (click)="handleNavigationClicks(link.label)"
+        >
+          {{ link.label }}
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+</header>

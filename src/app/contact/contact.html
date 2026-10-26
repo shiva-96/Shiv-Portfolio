@@ -1,0 +1,33 @@
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="section-header">
+      <span class="section-label">05 · Contact</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h2 class="contact-title">
+          {{ contactTitle }}
+        </h2>
+        <p class="contact-sub">{{ contactSubtitle }}</p>
+      </div>
+
+      <div class="contact-links">
+        <button
+          mat-stroked-button
+          *ngFor="let link of contactLinks"
+          class="contact-link"
+          (click)="openLink(link.href)"
+        >
+          <mat-icon>{{ link.icon }}</mat-icon>
+          <div class="link-content">
+            <div class="link-label">{{ link.label }}</div>
+            <div class="link-value">{{ link.value }}</div>
+          </div>
+          <mat-icon class="link-arrow">arrow_outward</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
