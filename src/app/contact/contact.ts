@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,37 +15,39 @@ export interface ContactLink {
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatIconModule],
   templateUrl: './contact.html',
-  styleUrl: './contact.scss'
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrl: './contact.scss',
 })
 export class ContactComponent {
-  contactTitle = 'Let\'s Get in Touch';
-  contactSubtitle = 'Have a project in mind or just want to chat? I\'d love to hear from you. Feel free to reach out through any of these channels.';
+  contactTitle = "Let's Get in Touch";
+  contactSubtitle =
+    "Have a project in mind or just want to chat? I'd love to hear from you. Feel free to reach out through any of these channels.";
 
   contactLinks: ContactLink[] = [
     {
       icon: 'email',
       label: 'Email',
       value: 'shiv@example.com',
-      href: 'mailto:shiv@example.com'
+      href: 'mailto:shiv@example.com',
     },
     {
       icon: 'language',
       label: 'Website',
       value: 'www.yourportfolio.com',
-      href: 'https://yourportfolio.com'
+      href: 'https://yourportfolio.com',
     },
     {
       icon: 'code',
       label: 'GitHub',
       value: 'github.com/yourprofile',
-      href: 'https://github.com/yourprofile'
+      href: 'https://github.com/yourprofile',
     },
     {
       icon: 'person',
       label: 'LinkedIn',
       value: 'linkedin.com/in/yourprofile',
-      href: 'https://linkedin.com/in/yourprofile'
-    }
+      href: 'https://linkedin.com/in/yourprofile',
+    },
   ];
 
   openLink(href: string) {

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
@@ -16,11 +16,12 @@ import { Router } from '@angular/router';
     MatButtonModule,
     MatChipsModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
-  standalone: true
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: true,
 })
 export class Header {
   headerLinks = headerLinks;
@@ -30,7 +31,7 @@ export class Header {
     { label: 'Skills', value: 'skills' },
     { label: 'Experience', value: 'experience' },
     { label: 'Projects', value: 'projects' },
-    { label: 'Contact', value: 'contact' }
+    { label: 'Contact', value: 'contact' },
   ];
   activeLink = signal('about');
 

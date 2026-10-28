@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,7 +17,8 @@ export interface Project {
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatIconModule],
   templateUrl: './project-card.html',
-  styleUrl: './project-card.scss'
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrl: './project-card.scss',
 })
 export class ProjectCardComponent {
   @Input() project!: Project;

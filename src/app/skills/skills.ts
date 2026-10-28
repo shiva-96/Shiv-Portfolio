@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SkillCardComponent, Skill } from '../shared/components/skill-card';
 
@@ -7,7 +7,8 @@ import { SkillCardComponent, Skill } from '../shared/components/skill-card';
   imports: [CommonModule, SkillCardComponent],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
-  standalone: true
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: true,
 })
 export class Skills {
   skills: Skill[] = [
@@ -15,25 +16,25 @@ export class Skills {
       icon: '⚛️',
       name: 'Frontend',
       proficiency: 'Expert',
-      tags: ['Angular', 'React', 'TypeScript', 'RxJS']
+      tags: ['Angular', 'React', 'TypeScript', 'RxJS'],
     },
     {
       icon: '🔧',
       name: 'Backend',
       proficiency: 'Advanced',
-      tags: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB']
+      tags: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB'],
     },
     {
       icon: '🎨',
       name: 'UI/UX',
       proficiency: 'Advanced',
-      tags: ['Material Design', 'Figma', 'Responsive', 'CSS']
+      tags: ['Material Design', 'Figma', 'Responsive', 'CSS'],
     },
     {
       icon: '🚀',
       name: 'DevOps',
       proficiency: 'Intermediate',
-      tags: ['Docker', 'AWS', 'CI/CD', 'GitHub Actions']
-    }
+      tags: ['Docker', 'AWS', 'CI/CD', 'GitHub Actions'],
+    },
   ];
 }

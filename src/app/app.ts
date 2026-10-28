@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Header } from './header/header';
 import { HeroComponent } from './hero/hero';
 import { About } from './about/about';
@@ -19,10 +19,10 @@ import { FooterComponent } from './footer/footer';
     ExperienceComponent,
     ProjectsComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrl: './app.scss',
 })
 export class App {}
-
