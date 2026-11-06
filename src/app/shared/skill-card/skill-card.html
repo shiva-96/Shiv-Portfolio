@@ -1,0 +1,9 @@
+<div class="skill-card">
+  <div class="skill-icon" [class.language-color]="skill().icon === '{ }'">{{ skill().icon }}</div>
+  <h3 class="skill-name">{{ skill().name }}</h3>
+  <div class="skill-tags">
+    @for (tag of skill().tags; track $index) {
+      <span class="tag">{{ tag }}</span>
+    }
+  </div>
+</div>

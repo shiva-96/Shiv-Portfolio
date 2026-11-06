@@ -1,7 +1,7 @@
 @use '../styles/common-style' as cs;
 
 .app-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: cs.$z-header;
   width: 100%;
@@ -84,16 +84,23 @@
   border-radius: 100px !important;
   display: flex;
   align-items: center;
-  gap: cs.$space-xs;
 
   mat-icon {
-    width: cs.$dot-size !important;
-    height: cs.$dot-size !important;
-    font-size: cs.$dot-size !important;
-    line-height: cs.$dot-size !important;
+    width: cs.$dot-size-lg !important;
+    height: cs.$dot-size-lg !important;
+    font-size: cs.$dot-size-lg !important;
+    line-height: 13px !important;
     color: cs.$color-accent;
     animation: pulse cs.$duration-pulse infinite cs.$easing-smooth;
   }
+}
+::ng-deep .mat-mdc-standard-chip .mdc-evolution-chip__action--primary {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.availableClasss{
+  padding-left: 4px;
 }
 
 .btn-resume {

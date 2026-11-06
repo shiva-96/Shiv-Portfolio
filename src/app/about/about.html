@@ -6,14 +6,16 @@
     </div>
 
     <div class="about-content">
-      <h2 class="about-title">{{ aboutTitle }}</h2>
-      <p class="about-description">{{ aboutDescription }}</p>
+      <h2 class="about-title">{{ aboutTitle() }}</h2>
+      <p class="about-description">{{ aboutDescription() }}</p>
 
       <div class="about-highlights">
-        <div *ngFor="let highlight of highlights" class="highlight-item">
-          <span class="highlight-icon">✓</span>
-          <span>{{ highlight }}</span>
-        </div>
+        @for (highlight of highlights(); track $index) {
+          <div class="highlight-item">
+            <span class="highlight-icon">✓</span>
+            <span>{{ highlight }}</span>
+          </div>
+        }
       </div>
     </div>
   </div>

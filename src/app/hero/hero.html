@@ -9,31 +9,33 @@
       </div>
 
       <h1 class="hero-title">
-        {{ heroTitle }}<br />
-        <em>{{ heroHighlight }}</em><br />
-        {{ heroSubtitle }}
+        {{ heroTitle() }}<br />
+        <em>{{ heroHighlight() }}</em><br />
+        {{ heroSubtitle() }}
       </h1>
 
       <p class="hero-description">
-        {{ description }}
+        {{ description() }}
       </p>
 
       <div class="hero-actions">
-        <button mat-raised-button class="btn-primary" (click)="handleScrollToContact()">
+        <button mat-raised-button class="btn-primary" (click)="navigateToContact()">
           <mat-icon>arrow_forward</mat-icon>
           Get In Touch
         </button>
-        <button mat-stroked-button class="btn-ghost">
+        <button mat-stroked-button class="btn-ghost" (click)="downloadResume()">
           <mat-icon>download</mat-icon>
           Download CV
         </button>
       </div>
 
       <div class="hero-stats">
-        <div *ngFor="let stat of stats" class="stat-item">
-          <div class="stat-number">{{ stat.number }}</div>
-          <div class="stat-label">{{ stat.label }}</div>
-        </div>
+        @for (stat of stats(); track $index) {
+          <div class="stat-item">
+            <div class="stat-number">{{ stat.number }}</div>
+            <div class="stat-label">{{ stat.label }}</div>
+          </div>
+        }
       </div>
     </div>
 
@@ -43,19 +45,27 @@
         <div class="img-inner">
           <!-- Placeholder Avatar -->
           <div class="avatar-placeholder">
-            <div class="avatar-bg-circle"></div>
-            <div class="avatar-silhouette">
-              <div class="avatar-head"></div>
-              <div class="avatar-body"></div>
-            </div>
+            <img class="avtImage" [src]="heroImage()" alt="Shiv Image" />
           </div>
+        </div>
+        <!-- Floating badges -->
+        <div class="open-to-work">
+          <mat-icon class="dot">fiber_manual_record</mat-icon>
+          <span class="availableClasss">Open to work</span>
+        </div> 
+        <div class="float-tag tag-1">TypeScript</div>
+        <div class="float-tag tag-2">
+          NestJS  🛠
+          <div class="aws-icon-container">
+            AWS ☁️
+          </div>
+        </div>
+        <div class="total-years-exp">
+          <span class="years">4.5+</span>
+          <span class="exp">Yrs experience</span>
         </div>
       </div>
 
-      <!-- Floating badges -->
-      <div class="float-tag tag-1">Angular</div>
-      <div class="float-tag tag-2">TypeScript</div>
-      <div class="float-tag tag-3">RxJS</div>
     </div>
   </div>
 </section>

@@ -1,28 +1,36 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Header } from './header/header';
-import { HeroComponent } from './hero/hero';
+import { Hero } from './hero/hero';
 import { About } from './about/about';
 import { Skills } from './skills/skills';
-import { ExperienceComponent } from './experience/experience';
-import { ProjectsComponent } from './projects/projects';
-import { ContactComponent } from './contact/contact';
-import { FooterComponent } from './footer/footer';
+import { Experience } from './experience/experience';
+import { Projects } from './projects/projects';
+import { Contact } from './contact/contact';
+import { Footer } from './footer/footer';
+import { MatIcon } from '@angular/material/icon';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [
     Header,
-    HeroComponent,
+    Hero,
     About,
     Skills,
-    ExperienceComponent,
-    ProjectsComponent,
-    ContactComponent,
-    FooterComponent,
-  ],
+    Experience,
+    Projects,
+    Contact,
+    Footer,
+    MatIcon,
+    MatTooltip
+],
   templateUrl: './app.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss',
 })
-export class App {}
+export class App {
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+}

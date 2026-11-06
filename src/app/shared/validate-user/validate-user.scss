@@ -1,0 +1,147 @@
+@use '../../styles/common-style' as cs;
+
+:host {
+  display: block;
+}
+
+.validation-modal {
+  position: relative;
+  padding: cs.$space-3xl;
+  color: cs.$color-text-primary;
+  background:
+    radial-gradient(circle at top right, cs.$color-accent-glow, transparent 42%),
+    cs.$color-surface;
+  border: 1px solid cs.$color-border;
+  border-radius: 18px;
+  font-family: cs.$font-body;
+}
+
+.close-button {
+  position: absolute;
+  top: cs.$space-md;
+  right: cs.$space-md;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  color: cs.$color-text-muted;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    color: cs.$color-text-primary;
+    border-color: cs.$color-border;
+    outline: none;
+  }
+}
+
+.eyebrow {
+  margin: 0 0 cs.$space-sm;
+  color: cs.$color-accent;
+  font-size: cs.$font-size-xs;
+  letter-spacing: cs.$tracking-wide;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0;
+  font-family: cs.$font-display;
+  font-size: cs.$font-size-2xl;
+}
+
+.description {
+  margin: cs.$space-sm 0 cs.$space-2xl;
+  color: cs.$color-text-muted;
+  font-size: cs.$font-size-base;
+  line-height: cs.$line-height-normal;
+}
+
+.role-options {
+  display: grid;
+  gap: cs.$space-md;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.role-option {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: cs.$space-md;
+  padding: 0 cs.$space-lg;
+  background: cs.$color-card;
+  border: 1px solid cs.$color-border;
+  border-radius: 10px;
+  color: cs.$color-text-primary;
+  font-size: cs.$font-size-md;
+  cursor: pointer;
+  transition: border-color cs.$duration-fast cs.$easing, background cs.$duration-fast cs.$easing;
+
+  &:has(input:checked) {
+    background: cs.$color-accent-glow;
+    border-color: cs.$color-accent-border;
+  }
+
+  &:focus-within {
+    outline: 2px solid cs.$color-accent;
+    outline-offset: 2px;
+  }
+
+  input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: cs.$color-accent;
+  }
+}
+
+.security-key {
+  display: grid;
+  gap: cs.$space-sm;
+  margin-top: cs.$space-2xl;
+
+  label {
+    color: cs.$color-text-muted;
+    font-size: cs.$font-size-sm;
+  }
+
+  input {
+    min-height: 46px;
+    padding: 0 cs.$space-md;
+    color: cs.$color-text-primary;
+    background: cs.$color-bg;
+    border: 1px solid cs.$color-border;
+    border-radius: 8px;
+    font: inherit;
+
+    &::placeholder {
+      color: cs.$color-text-muted;
+    }
+
+    &:focus {
+      border-color: cs.$color-accent;
+      outline: 2px solid cs.$color-accent-glow;
+    }
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 480px) {
+  .validation-modal {
+    padding: cs.$space-2xl cs.$space-lg;
+  }
+}

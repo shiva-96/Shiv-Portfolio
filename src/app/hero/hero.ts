@@ -1,34 +1,38 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { Router } from '@angular/router';
+import { DownloadPdfService } from '../download-pdf-service';
 
 @Component({
   selector: 'app-hero',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule],
+  imports: [MatButtonModule, MatIconModule, MatChipsModule],
   templateUrl: './hero.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './hero.scss',
 })
-export class HeroComponent {
-  heroTitle = 'Building';
-  heroHighlight = 'scalable';
-  heroSubtitle = 'web apps.';
+export class Hero {
+  private readonly router = inject(Router);
+  private readonly downloadPdfService = inject(DownloadPdfService);
 
-  description =
-    'Full-stack developer with 3+ years of experience building high-performance web applications. Passionate about clean code, modern technologies, and creating exceptional user experiences.';
+  heroTitle = signal('Building');
+  heroHighlight = signal('scalable');
+  heroSubtitle = signal('web apps.');
+  heroImage = signal('assets/images/My-Image.jpeg');
+  description = signal(
+    "Software Engineer with 2.5+ years crafting enterprise-grade web applications. Specializing in Angular frontends, Node.js/NestJS backends, and AWS deployments."
+  );
+  stats = signal([
+    { number: '4.5+', label: 'Years Experience' },
+    { number: '5+', label: 'Projects Completed' },
+    { number: '10+', label: 'Happy Clients' },
+  ]);
 
-  stats = [
-    { number: '3+', label: 'Years Experience' },
-    { number: '50+', label: 'Projects Completed' },
-    { number: '30+', label: 'Happy Clients' },
-  ];
+  navigateToContact() {
+    void this.router.navigate([], { fragment: 'contact' });
+  }
 
-  handleScrollToContact() {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  downloadResume(): void {
+    this.downloadPdfService.downloadResume();
   }
 }

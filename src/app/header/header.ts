@@ -1,47 +1,66 @@
-import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { CommonModule } from '@angular/common';
 import { headerLinks } from '../constant';
 import { Router } from '@angular/router';
+import { DownloadPdfService } from '../download-pdf-service';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-header',
   imports: [
-    CommonModule,
     MatToolbarModule,
     MatButtonModule,
     MatChipsModule,
     MatIconModule,
     MatMenuModule,
+    MatTooltipModule
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  standalone: true,
 })
 export class Header {
-  headerLinks = headerLinks;
-  private router = inject(Router);
-  navLinks = [
+  private readonly router = inject(Router);
+  private readonly downloadPdfService = inject(DownloadPdfService);
+
+  headerLinks = signal(headerLinks);
+  activeLink = signal('');
+  navLinks = signal([
+    { label: 'Home', value: 'hero' },
     { label: 'About', value: 'about' },
     { label: 'Skills', value: 'skills' },
     { label: 'Experience', value: 'experience' },
     { label: 'Projects', value: 'projects' },
     { label: 'Contact', value: 'contact' },
-  ];
-  activeLink = signal('about');
+  ]);
 
-  handleNavigationClicks(link: string) {
-    this.activeLink.set(link.toLowerCase());
-    this.router.navigate([link.toLowerCase()]);
+  setActiveLink(section: string) {
+    this.activeLink.set(section);
+    void this.router.navigate([], { fragment: section });
   }
 
   downloadResume() {
-    // Add resume download logic here
-    console.log('Download resume');
+    this.downloadPdfService.downloadResume();
+  }
+
+  ngAfterViewInit() {
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.activeLink.set(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.6
+      }
+    );
+
+    sections.forEach(section => observer.observe(section));
   }
 }

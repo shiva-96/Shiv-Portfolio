@@ -70,6 +70,75 @@ body {
   }
 }
 
+.contact-tooltip .mat-mdc-tooltip-surface {
+  background-color: cs.$color-surface;
+  border: 1px solid cs.$color-border;
+  color: cs.$color-text-primary;
+  font-family: cs.$font-body;
+  font-size: cs.$font-size-sm;
+  line-height: 1.4;
+  padding: 6px 10px;
+}
+
+.validate-user-dialog {
+  max-width: calc(100vw - 32px) !important;
+
+  .cdk-dialog-container {
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+.validate-user-backdrop {
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.eligibility-snackbar .mdc-snackbar__surface {
+  --mdc-snackbar-container-color: #111118;
+  min-height: 56px;
+  border: 0px solid #ef4444;
+  border-radius: 10px;
+  background-color: #111118 !important;
+  box-shadow: inset 0 0 40px rgba(127, 29, 29, 0.35);
+}
+
+.eligibility-snackbar {
+  margin-top: 70px !important;
+}
+
+.eligibility-snackbar .mdc-snackbar__label {
+  color: #fee2e2;
+  font-family: cs.$font-body;
+  font-size: cs.$font-size-base;
+  line-height: 1.5;
+  padding: 14px 8px 14px 16px;
+}
+
+.eligibility-snackbar .mat-mdc-snack-bar-action {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  margin: 0 8px 0 0;
+  padding: 0;
+  border-radius: 50%;
+  background-color: transparent !important;
+  --mat-text-button-state-layer-color: transparent;
+  color: #fca5a5;
+  font-size: 24px;
+  line-height: 1;
+
+  .mat-mdc-button-persistent-ripple::before {
+    background-color: transparent !important;
+  }
+
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
 // Typography
 h1,
 h2,
@@ -96,4 +165,3 @@ html {
   background: cs.$color-accent;
   color: cs.$color-text-on-accent;
 }
-

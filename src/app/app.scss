@@ -10,3 +10,14 @@
 section {
   scroll-margin-top: cs.$header-height;
 }
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 26px;
+  right: 20px;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid cs.$color-border;
+}

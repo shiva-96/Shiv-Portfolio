@@ -50,3 +50,44 @@
     padding: cs.$space-4xl 0 cs.$space-5xl;
   }
 }
+
+.project-card {
+  background: cs.$color-card;
+  // border: cs.$border-width solid cs.$color-border;
+  border-radius: cs.$radius-2xl;
+  padding: cs.$card-padding-lg;
+  transition: all cs.$duration-normal cs.$easing;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  border-style:dashed;
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  flex-direction:column;
+  gap:10px; 
+  color:var(--muted);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: cs.$gradient-card-top-line;
+    opacity: 0;
+    transition: opacity cs.$duration-slow cs.$easing;
+  }
+
+  &:hover {
+    border-color: cs.$color-accent-border;
+    transform: cs.$hover-lift;
+    box-shadow: cs.$shadow-card-hover;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}

@@ -6,7 +6,13 @@
     </div>
 
     <div class="projects-grid">
-      <app-project-card *ngFor="let project of projects" [project]="project"></app-project-card>
+      @for (project of projects(); track project.title) {
+        <app-project-card [project]="project"></app-project-card>
+      }
+      <button class="project-card" type="button" (click)="addMoreProject()">
+        <div style="font-size:28px">＋</div>
+        <div style="font-size:12px">More projects coming</div>
+      </button>
     </div>
   </div>
 </section>

@@ -6,15 +6,16 @@
 
     <!-- Desktop Navigation -->
     <nav class="nav-desktop">
-      <button
-        mat-button
-        *ngFor="let link of navLinks"
-        [class.active]="activeLink() === link.value"
-        (click)="handleNavigationClicks(link.label)"
-        class="nav-link"
-      >
-        {{ link.label }}
-      </button>
+      @for (link of navLinks(); track link.value) {
+        <button
+          mat-button
+          [class.active]="activeLink() === link.value"
+          (click)="setActiveLink(link.value)"
+          class="nav-link"
+        >
+          {{ link.label }}
+        </button>
+      }
     </nav>
 
     <div class="spacer"></div>
@@ -25,12 +26,14 @@
       <mat-chip-set aria-label="Status">
         <mat-chip class="status-chip">
           <mat-icon class="dot">fiber_manual_record</mat-icon>
-          <span>Available</span>
+          <span class="availableClasss" >Available</span>
         </mat-chip>
       </mat-chip-set>
 
       <!-- Resume Button -->
       <button
+        [matTooltip]="'Download Resume'"
+        matTooltipClass="contact-tooltip"
         mat-raised-button
         class="btn-resume"
         (click)="downloadResume()"
@@ -49,13 +52,14 @@
       </button>
 
       <mat-menu #mobileMenu="matMenu">
-        <button
-          mat-menu-item
-          *ngFor="let link of navLinks"
-          (click)="handleNavigationClicks(link.label)"
-        >
-          {{ link.label }}
-        </button>
+        @for (link of navLinks(); track link.value) {
+          <button
+            mat-menu-item
+            (click)="setActiveLink(link.value)"
+          >
+            {{ link.label }}
+          </button>
+        }
       </mat-menu>
     </div>
   </mat-toolbar>

@@ -1,23 +1,19 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule],
   templateUrl: './about.html',
   styleUrl: './about.scss',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  standalone: true,
 })
 export class About {
-  aboutTitle = 'About Me';
-  aboutDescription =
-    "I'm a passionate full-stack developer based in India with a keen interest in building beautiful, functional, and user-centric applications. With 3+ years of professional experience, I specialize in modern JavaScript frameworks and have a strong foundation in backend technologies.";
-
-  highlights = [
+  aboutTitle = signal('About Me');
+  aboutDescription = signal(
+    "Full-Stack Software Engineer with 4.5+ years of experience building scalable REST APIs, event-driven systems and enterprise web applications using NestJS, Node.js, Express.js, Angular and AWS (Lambda, SQS, SNS, DynamoDB, EventBridge, API Gateway). Experienced in migrating legacy integrations to serverless architecture, designing message-driven workflows and delivering zero-downtime production releases. Also delivered a geospatial web application for DRDO-Chandigarh across frontend and backend. Strong focus on clean architecture, performance, reliability and cross-team collaboration."
+  );
+  highlights = signal([
     'Building scalable web applications',
     'Creating responsive and accessible UIs',
     'Writing clean, maintainable code',
     'Collaborating with cross-functional teams',
-  ];
+  ]);
 }

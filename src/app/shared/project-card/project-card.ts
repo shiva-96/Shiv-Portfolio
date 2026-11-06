@@ -1,9 +1,8 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-export interface Project {
+export interface ProjectInterface {
   icon: string;
   title: string;
   description: string;
@@ -14,14 +13,12 @@ export interface Project {
 
 @Component({
   selector: 'app-project-card',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule],
+  imports: [MatButtonModule, MatIconModule],
   templateUrl: './project-card.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './project-card.scss',
 })
 export class ProjectCardComponent {
-  @Input() project!: Project;
+  project = input.required<ProjectInterface>();
 
   openLink(url: string) {
     window.open(url, '_blank');

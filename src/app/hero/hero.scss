@@ -28,7 +28,7 @@
   border: cs.$border-width solid cs.$color-border;
   border-radius: cs.$radius-full;
   padding: cs.$space-xs cs.$space-md;
-  font-size: cs.$font-size-xs;
+  font-size: cs.$font-size-base;
   color: cs.$color-text-muted;
   width: fit-content;
 
@@ -194,6 +194,13 @@
   overflow: hidden;
 }
 
+.avtImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: cs.$radius-3xl;
+}
+
 .avatar-bg-circle {
   position: absolute;
   top: -40px;
@@ -259,6 +266,35 @@
   }
 }
 
+.open-to-work {
+  position: absolute;
+  background: rgba(10, 10, 15, 0.95);
+  border: 1px solid #1e1e2e;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 10px;
+  color: #42f5c8;
+  z-index: 3;
+  /* animation: _ngcontent-ng-c2855991580_floatY 3s ease-in-out infinite; */
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  top: 12px;
+  right: 229px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+}
+
+.dot {
+  font-size: cs.$dot-size-lg !important;
+  line-height: 13px !important;
+  color: cs.$color-accent;
+  animation: pulse cs.$duration-pulse infinite cs.$easing-smooth;
+  height: 12px;
+  width: 15px;
+}
+
 // Floating badges
 .float-tag {
   position: absolute;
@@ -273,21 +309,56 @@
   backdrop-filter: blur(8px);
 
   &.tag-1 {
-    top: 80px;
-    right: -30px;
+    top: 55px;
+    right: 255px;
     animation-delay: 0s;
   }
 
   &.tag-2 {
-    top: 160px;
-    left: -36px;
+    top: 210px;
+    left: -24px;
     animation-delay: 1s;
+    height: 100px;
+  }
+}
+.aws-icon-container{
+  border: cs.$border-width solid cs.$color-border;
+  border-radius: cs.$radius-md;
+  padding: cs.$space-xs cs.$space-md;
+  font-size: cs.$font-size-xs;
+  color: cs.$color-text-muted;
+  margin: 64px -8px;
+  animation: floatY cs.$duration-float cs.$easing-smooth infinite;
+}
+
+.total-years-exp {
+  position: absolute;
+  background: rgba(10, 10, 15, 0.95);
+  border: cs.$border-width solid cs.$color-border;
+  border-radius: cs.$radius-md;
+  padding: cs.$space-xs cs.$space-md;
+  font-size: cs.$font-size-xs;
+  color: cs.$color-text-muted;
+  z-index: 3;
+  backdrop-filter: blur(8px);
+  bottom: 16px;
+  left: 215px;
+  display: grid;
+  text-align: right;
+  width: 30%;
+
+  .years {
+    font-family: cs.$font-display;
+    font-size: cs.$font-size-2xl;
+    font-weight: cs.$font-weight-black;
+    color: cs.$color-accent;
+    line-height: cs.$line-height-tight;
   }
 
-  &.tag-3 {
-    bottom: 80px;
-    left: -28px;
-    animation-delay: 2s;
+  .exp {
+    font-size: cs.$font-size-base;
+    color: cs.$color-text-muted;
+    margin-top: cs.$space-xs;
   }
 }
 
@@ -311,11 +382,6 @@
   .hero-image-wrap {
     order: -1;
   }
-
-  .img-frame {
-    width: 250px;
-    height: 300px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -333,9 +399,5 @@
 
   .hero-stats {
     gap: cs.$space-3xl;
-  }
-
-  .float-tag {
-    display: none;
   }
 }
