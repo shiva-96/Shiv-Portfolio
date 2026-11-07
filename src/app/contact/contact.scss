@@ -87,7 +87,7 @@
   transition: all cs.$duration-fast cs.$easing !important;
   background: transparent !important;
   text-align: left;
-
+  height: fit-content;
   &:hover {
     border-color: cs.$color-accent !important;
     color: cs.$color-accent !important;
