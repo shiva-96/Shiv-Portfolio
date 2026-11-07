@@ -72,6 +72,7 @@
   align-items: center;
   gap: cs.$space-lg;
   flex-shrink: 0;
+  position: relative;
 }
 
 ::ng-deep .status-chip {
@@ -130,6 +131,30 @@
 .menu-toggle {
   display: none;
   color: cs.$color-text-primary;
+}
+
+::ng-deep .mobile-nav-panel {
+  max-width: min(240px, calc(100vw - 32px)) !important;
+  padding: cs.$space-sm !important;
+  background: cs.$color-surface !important;
+  border: cs.$border-width solid cs.$color-border;
+  border-radius: cs.$radius-lg !important;
+  box-shadow: cs.$shadow-card-hover !important;
+
+  .mobile-nav-link {
+    color: cs.$color-text-muted;
+    font-family: cs.$font-body;
+    font-size: cs.$font-size-base;
+    transition:
+      color cs.$duration-fast cs.$easing,
+      background cs.$duration-fast cs.$easing;
+
+    &:hover,
+    &.active {
+      background: cs.$color-accent-glow;
+      color: cs.$color-accent;
+    }
+  }
 }
 
 @keyframes pulse {

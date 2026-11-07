@@ -29,6 +29,7 @@ export class Header {
   isViewMobileTab = signal(window.innerWidth <= 768);
   headerLinks = signal(headerLinks);
   activeLink = signal('');
+  mobileMenuOpen = signal(false);
   navLinks = signal([
     { label: 'Home', value: 'hero' },
     { label: 'About', value: 'about' },
@@ -40,6 +41,7 @@ export class Header {
 
   setActiveLink(section: string) {
     this.activeLink.set(section);
+    this.mobileMenuOpen.set(false);
     void this.router.navigate([], { fragment: section });
   }
 

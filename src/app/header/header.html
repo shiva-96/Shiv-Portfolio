@@ -48,15 +48,27 @@
 
       <!-- Mobile Menu -->
       @if (isViewMobileTab()) {
-        <button mat-icon-button class="menu-toggle" [matMenuTriggerFor]="mobileMenu">
-          <mat-icon>menu</mat-icon>
+        <button
+          mat-icon-button
+          class="menu-toggle"
+          aria-label="Toggle navigation"
+          [matMenuTriggerFor]="mobileMenu"
+          (menuOpened)="mobileMenuOpen.set(true)"
+          (menuClosed)="mobileMenuOpen.set(false)"
+        >
+          <mat-icon>{{ mobileMenuOpen() ? 'close' : 'menu' }}</mat-icon>
         </button>
 
-        <mat-menu #mobileMenu="matMenu">
+        <mat-menu #mobileMenu="matMenu" class="mobile-nav-panel" aria-label="Mobile navigation">
           @for (link of navLinks(); track link.value) {
-          <button mat-menu-item (click)="setActiveLink(link.value)">
-            {{ link.label }}
-          </button>
+            <button
+              mat-menu-item
+              class="mobile-nav-link"
+              [class.active]="activeLink() === link.value"
+              (click)="setActiveLink(link.value)"
+            >
+              {{ link.label }}
+            </button>
           }
         </mat-menu>
       }
