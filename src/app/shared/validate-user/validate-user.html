@@ -1,4 +1,4 @@
-<section class="validation-modal" aria-labelledby="validation-title">
+<section class="validation-modal" aria-labelledby="validation-title" [formGroup]="verifyRole">
   <button
     class="close-button"
     type="button"
@@ -12,38 +12,52 @@
   <h2 id="validation-title">Verify your role</h2>
   <p class="description">Select your role to continue.</p>
 
-  <fieldset class="role-options">
+  <fieldset class="role-options" >
     <legend class="sr-only">Your role</legend>
     <label class="role-option">
       <input
         type="radio"
-        name="user-role"
         value="admin"
-        [checked]="selectedRole() === 'admin'"
-        (change)="selectRole('admin')"
+        formControlName="role"
+        (change)="selectRole()"
       />
       <span>Admin</span>
     </label>
     <label class="role-option">
       <input
         type="radio"
-        name="user-role"
         value="other"
-        (change)="selectRole('other')"
+        formControlName="role"
+        (change)="selectRole()"
       />
-      <span>HR / Other</span>
+      <span>Other</span>
     </label>
   </fieldset>
 
-  @if (selectedRole() === 'admin') {
+  @if (verifyRole.get('role')?.value === 'admin') {
     <div class="security-key">
       <label for="security-key">Security key</label>
       <input
         id="security-key"
         type="password"
         autocomplete="current-password"
+        formControlName="securityKey"
         placeholder="Enter your security key"
+        [class]="{ 
+          'secret-key-field': verifyRole.get('securityKey')?.invalid || verifyRole.getError('invalidKey'),
+          'secret-key-valid': verifyRole.controls.securityKey.valid && !verifyRole.controls.securityKey.hasError('invalidKey')
+        }"
       />
+      @if (verifyRole.get('securityKey')?.invalid || verifyRole.getError('invalidKey')) {
+        <mat-error> Invalid security key. Please try again.</mat-error>
+      }
     </div>
+    <button
+      class="submit-button"
+      type="button"
+      (click)="submit()"
+    >
+      Submit
+    </button>
   }
 </section>

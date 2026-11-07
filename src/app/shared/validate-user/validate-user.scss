@@ -105,6 +105,10 @@ h2 {
   gap: cs.$space-sm;
   margin-top: cs.$space-2xl;
 
+  mat-error {
+    font-size: cs.$font-size-sm;
+  }
+
   label {
     color: cs.$color-text-muted;
     font-size: cs.$font-size-sm;
@@ -124,8 +128,11 @@ h2 {
     }
 
     &:focus {
-      border-color: cs.$color-accent;
       outline: 2px solid cs.$color-accent-glow;
+    }
+
+    &.secret-key-valid:focus {
+      border-color: cs.$color-accent;
     }
   }
 }
@@ -143,5 +150,29 @@ h2 {
 @media (max-width: 480px) {
   .validation-modal {
     padding: cs.$space-2xl cs.$space-lg;
+  }
+}
+
+.secret-key-field {
+  border-color: cs.$color-error;
+  outline: 2px solid cs.$color-error-glow;
+  box-shadow: inset 0 0 40px rgba(127, 29, 29, 0.35);
+}
+
+.submit-button {
+  display: block;
+  margin: cs.$space-2xl auto 0;
+  padding: cs.$space-sm cs.$space-lg;
+  color: cs.$color-text-on-accent;
+  background: cs.$color-accent;
+  border: none;
+  border-radius: 8px;
+  font-size: cs.$font-size-md;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background: cs.$color-accent-hover;
+    outline: none;
   }
 }

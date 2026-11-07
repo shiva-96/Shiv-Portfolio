@@ -31,36 +31,36 @@
       </mat-chip-set>
 
       <!-- Resume Button -->
-      <button
-        [matTooltip]="'Download Resume'"
-        matTooltipClass="contact-tooltip"
-        mat-raised-button
-        class="btn-resume"
-        (click)="downloadResume()"
-      >
-        <mat-icon>download</mat-icon>
-        Resume
-      </button>
+      @if (isViewMobileTab()) {
+        <mat-icon (click)="downloadResume()">download</mat-icon>
+      } @else{
+        <button
+          [matTooltip]="'Download Resume'"
+          matTooltipClass="contact-tooltip"
+          mat-raised-button
+          class="btn-resume"
+          (click)="downloadResume()"
+        >
+          <mat-icon>download</mat-icon>
+          Resume
+        </button>
+      }
 
       <!-- Mobile Menu -->
-      <button
-        mat-icon-button
-        class="menu-toggle"
-        [matMenuTriggerFor]="mobileMenu"
-      >
-        <mat-icon>menu</mat-icon>
-      </button>
+      @if (isViewMobileTab()) {
+        <button mat-icon-button class="menu-toggle" [matMenuTriggerFor]="mobileMenu">
+          <mat-icon>menu</mat-icon>
+        </button>
 
-      <mat-menu #mobileMenu="matMenu">
-        @for (link of navLinks(); track link.value) {
-          <button
-            mat-menu-item
-            (click)="setActiveLink(link.value)"
-          >
+        <mat-menu #mobileMenu="matMenu">
+          @for (link of navLinks(); track link.value) {
+          <button mat-menu-item (click)="setActiveLink(link.value)">
             {{ link.label }}
           </button>
-        }
-      </mat-menu>
+          }
+        </mat-menu>
+      }
+
     </div>
   </mat-toolbar>
 </header>

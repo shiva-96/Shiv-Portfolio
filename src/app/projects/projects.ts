@@ -62,7 +62,7 @@ export class Projects {
       .closed.subscribe((result) => {
         if (result === 'ineligible') {
           this.snackBar.open('You are not eligible to access this section.', '×', {
-            duration: 350000,
+            duration: 3000,
             horizontalPosition: 'end',
             verticalPosition: 'top',
             panelClass: 'eligibility-snackbar',

@@ -45,8 +45,4 @@ export class Contact {
       tooltip: 'Click to view LinkedIn profile',
     },
   ]);
-
-  openLink(href: string) {
-    window.open(href, '_blank');
-  }
 }

@@ -26,6 +26,7 @@ export class Header {
   private readonly router = inject(Router);
   private readonly downloadPdfService = inject(DownloadPdfService);
 
+  isViewMobileTab = signal(window.innerWidth <= 768);
   headerLinks = signal(headerLinks);
   activeLink = signal('');
   navLinks = signal([

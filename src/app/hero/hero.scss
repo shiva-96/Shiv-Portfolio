@@ -12,7 +12,7 @@
   align-items: center;
   max-width: cs.$max-width;
   margin: 0 auto;
-  padding: 0 cs.$page-padding-x;
+  padding: cs.$page-padding-x cs.$page-padding-x;
 }
 
 .hero-left {
