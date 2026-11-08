@@ -20,6 +20,7 @@
             class="contact-link"
             [matTooltip]="link.tooltip"
             matTooltipClass="contact-tooltip"
+            (click)="openLink(link.href)"
           >
             <mat-icon>{{ link.icon }}</mat-icon>
             <div class="link-content">
