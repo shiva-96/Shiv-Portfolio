@@ -87,26 +87,25 @@
   padding-left: cs.$card-padding;
 }
 
+.exp-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: cs.$space-xs cs.$space-lg;
+}
+
 .exp-company {
   font-family: cs.$font-display;
   font-size: cs.$font-size-lg;
   font-weight: cs.$font-weight-bold;
   color: cs.$color-text-primary;
-  margin: 0 0 cs.$space-xs 0;
-}
-
-.exp-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: cs.$space-md;
-  margin: cs.$space-xs 0 cs.$space-md;
+  margin: 0;
 }
 
 .exp-role {
   font-size: cs.$font-size-xs;
   color: cs.$color-accent-secondary;
-  margin: 0;
+  margin: cs.$space-xs 0 cs.$space-md;
   font-weight: cs.$font-weight-medium;
 }
 
@@ -130,7 +129,6 @@
   font-size: cs.$font-size-base;
   color: cs.$color-text-muted;
   line-height: cs.$line-height-loose;
-  max-width: 600px;
   margin: 0 0 cs.$space-lg 0;
 }
 

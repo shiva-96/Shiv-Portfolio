@@ -20,11 +20,11 @@
             <p class="exp-date">{{ exp.date }}</p>
           </div>
           <div class="exp-content">
-            <h3 class="exp-company">{{ exp.company }}</h3>
-            <div class="exp-meta">
-              <p class="exp-role">{{ exp.role }}</p>
+            <div class="exp-heading">
+              <h3 class="exp-company">{{ exp.company }}</h3>
               <span class="exp-location">{{ exp.location }}</span>
             </div>
+            <p class="exp-role">{{ exp.role }}</p>
             <p class="exp-desc">{{ exp.description }}</p>
             <div class="exp-tech">
               @for (tech of exp.technologies; track $index) {
