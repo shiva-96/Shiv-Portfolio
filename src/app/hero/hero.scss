@@ -328,7 +328,7 @@
   font-size: cs.$font-size-xs;
   color: cs.$color-text-muted;
   margin: 56px -8px;
-  animation: floatY cs.$duration-float cs.$easing-smooth infinite;
+  animation: floatY cs.$duration-float3 cs.$easing-smooth infinite;
 }
 
 .total-years-exp {

@@ -70,7 +70,8 @@
 .header-right {
   display: flex;
   align-items: center;
-  gap: cs.$space-lg;
+  gap: cs.$space-md;
+  // gap: 10px;
   flex-shrink: 0;
   position: relative;
 }
@@ -96,8 +97,8 @@
   }
 }
 ::ng-deep .mat-mdc-standard-chip .mdc-evolution-chip__action--primary {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .availableClasss{
