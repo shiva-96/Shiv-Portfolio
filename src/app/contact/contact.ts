@@ -20,7 +20,7 @@ export interface ContactLink {
 export class Contact {
   contactTitle = signal("Let's Connect");
   contactSubtitle = signal(
-    "I'm always open to exploring new career opportunities, collaborating on interesting projects, and taking on meaningful technical challenges. I'm passionate about building scalable applications, solving complex problems, and continuously learning new technologies.\n If you're looking for a dedicated Software Engineer who values clean code, teamwork, and delivering impactful solutions, I'd love to connect and discuss potential opportunities.\nFeel free to reach out. I'd be happy to hear from you!"
+    "I'm open to new opportunities and thoughtful collaborations. If you're building something useful and need a hands-on engineer across Angular, Node.js, and AWS, let's talk."
   );
   contactLinks = signal<ContactLink[]>([
     {

@@ -18,12 +18,12 @@ export class Hero {
   private readonly calExpService = inject(CalculateExpericeService);
 
   totalExp = signal('0');
-  heroTitle = signal('Building');
-  heroHighlight = signal('scalable');
-  heroSubtitle = signal('web apps.');
+  heroTitle = signal('Engineering');
+  heroHighlight = signal('reliable');
+  heroSubtitle = signal('digital products.');
   heroImage = signal('assets/images/My-Image.jpeg');
   description = computed(() => {
-    return `Software Engineer with ${this.totalExp()}+ years crafting enterprise-grade web applications. Specializing in Angular frontends, Node.js/NestJS backends, and AWS deployments.`;
+    return `I'm a full-stack software engineer with ${this.totalExp()}+ years of experience building clear, dependable web applications—from Angular interfaces to Node.js services on AWS.`;
   });
   stats = computed(() => {
     return [
@@ -34,7 +34,7 @@ export class Hero {
   });
 
   ngOnInit() {
-    this.totalExp.set(this.calExpService.calculateTotalExp())
+    this.totalExp.set(this.calExpService.calculateTotalExp());
   }
 
   navigateToContact() {

@@ -3,6 +3,7 @@ import { Component, signal } from '@angular/core';
 export interface ExperienceStructure {
   date: string;
   company: string;
+  location: string;
   role: string;
   description: string;
   technologies: string[];
@@ -18,26 +19,29 @@ export class Experience {
     {
       date: '11 Aug 2025 - Present',
       company: 'Deloitte',
+      location: 'Kolkata',
       role: 'Software Engineer 2',
       description:
-        'Leading development of enterprise-scale Angular applications. Mentoring junior developers and establishing best practices for the team.',
-      technologies: ['Nestjs', 'TypeScript', 'AWS'],
+        'Developing and maintaining enterprise applications across Angular interfaces, NestJS services, and AWS integrations, with a focus on reliable delivery and maintainable code.',
+      technologies: ['NestJS', 'TypeScript', 'AWS', 'Angular'],
     },
     {
       date: '6 Sep 2023 - 8 Aug 2025',
       company: 'Infozech Software Pvt Ltd',
+      location: 'New Delhi',
       role: 'Software Engineer',
       description:
-        'Worked on developing and maintaining web applications using Angular and Node.js. Implemented RESTful APIs and integrated with MongoDB for data storage. Collaborated with cross-functional teams to deliver high-quality software solutions.',
+        'Developed and maintained web applications with Angular and Node.js, building REST APIs and integrating MongoDB. Partnered with cross-functional teams to ship features and support reliable production releases.',
       technologies: ['Angular', 'Node.js', 'MongoDB', 'Express', 'GDL'],
     },
     {
       date: '2 May 2022 - 5 Sep 2023',
       company: 'Simultaneous Geographical Reality Labs',
+      location: 'Gurugram',
       role: 'Full Stack Developer',
       description:
-        "Contributed to a geospatial web application for DRDO-Chandigarh, working across frontend and backend. Implemented Node.js REST APIs and backend services for geospatial data access and processing. Enhanced the map UI using OpenLayers and developed geospatial analysis features (e.g., intersection counts between rays). Collaborated with designers and stakeholders to convert domain requirements into reliable features.Performed testing, debugging, and performance tuning to ensure accuracy of geospatial outputs",
-      technologies: ['Angular', 'Nodejs', 'Expressjs', 'Typescript', 'OpenLayers', 'PostgreSQL'],
+        'Built features for a geospatial web application for DRDO-Chandigarh, spanning Node.js APIs, data processing, and an OpenLayers map interface. Delivered spatial analysis tools and tested outputs for accuracy with designers and stakeholders.',
+      technologies: ['Angular', 'Node.js', 'Express.js', 'TypeScript', 'OpenLayers', 'PostgreSQL'],
     },
   ]);
 }

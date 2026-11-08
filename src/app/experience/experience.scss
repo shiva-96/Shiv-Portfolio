@@ -95,11 +95,35 @@
   margin: 0 0 cs.$space-xs 0;
 }
 
+.exp-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: cs.$space-md;
+  margin: cs.$space-xs 0 cs.$space-md;
+}
+
 .exp-role {
   font-size: cs.$font-size-xs;
   color: cs.$color-accent-secondary;
-  margin: cs.$space-xs 0 cs.$space-md 0;
+  margin: 0;
   font-weight: cs.$font-weight-medium;
+}
+
+.exp-location {
+  display: inline-flex;
+  align-items: center;
+  gap: cs.$space-xs;
+  color: cs.$color-text-muted;
+  font-size: cs.$font-size-xs;
+
+  &::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: cs.$radius-circle;
+    background: cs.$color-accent;
+  }
 }
 
 .exp-desc {

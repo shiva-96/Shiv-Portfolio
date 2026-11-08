@@ -5,13 +5,20 @@
       <div class="section-line"></div>
     </div>
 
+    <div class="section-intro">
+      <h2 class="section-title">Selected work</h2>
+      <p class="section-description">
+        A few examples of the products, platforms, and engineering challenges I've worked on.
+      </p>
+    </div>
+
     <div class="projects-grid">
       @for (project of projects(); track project.title) {
         <app-project-card [project]="project"></app-project-card>
       }
-      <button class="project-card" type="button" (click)="addMoreProject()">
-        <div style="font-size:28px">＋</div>
-        <div style="font-size:12px">More projects coming</div>
+      <button class="project-card more-projects-card" type="button" (click)="addMoreProject()">
+        <span class="more-projects-icon" aria-hidden="true">＋</span>
+        <span>More projects coming</span>
       </button>
     </div>
   </div>

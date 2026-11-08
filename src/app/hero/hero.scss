@@ -1,7 +1,7 @@
 @use '../styles/common-style' as cs;
 
 .hero-section {
-  padding: cs.$space-4xl 0 cs.$section-gap;
+  padding: cs.$space-3xl 0 cs.$section-gap;
   border-bottom: cs.$border-width solid cs.$color-border;
 }
 
@@ -380,7 +380,7 @@
   }
 
   .hero-image-wrap {
-    order: -1;
+    order: 0;
   }
 }
 

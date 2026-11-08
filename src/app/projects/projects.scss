@@ -53,7 +53,7 @@
 
 .project-card {
   background: cs.$color-card;
-  // border: cs.$border-width solid cs.$color-border;
+  border: cs.$border-width dashed cs.$color-border;
   border-radius: cs.$radius-2xl;
   padding: cs.$card-padding-lg;
   transition: all cs.$duration-normal cs.$easing;
@@ -61,13 +61,13 @@
   position: relative;
   overflow: hidden;
 
-  border-style:dashed;
-  display:flex; 
-  align-items:center; 
-  justify-content:center; 
-  flex-direction:column;
-  gap:10px; 
-  color:var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: cs.$space-sm;
+  color: cs.$color-text-muted;
+  font: inherit;
 
   &::before {
     content: '';
@@ -89,5 +89,16 @@
     &::before {
       opacity: 1;
     }
+  }
+
+  .more-projects-icon {
+    color: cs.$color-accent;
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .more-projects-card:focus-visible {
+    outline: 2px solid cs.$color-accent;
+    outline-offset: 3px;
   }
 }

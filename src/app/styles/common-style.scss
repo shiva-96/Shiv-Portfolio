@@ -30,7 +30,7 @@ $color-accent-border:   rgba(200, 245, 66, 0.20);  // Accent-tinted border on ho
 // ─────────────────────────────────────────
 
 $color-text-primary:    #e8e8f0;  // Main readable body text, headings, nav links
-$color-text-muted:      #5a5a7a;  // Secondary/helper text — dates, labels, descriptions
+$color-text-muted:      #a3a3b8;  // Secondary/helper text — dates, labels, descriptions
 $color-text-on-accent:  #0a0a0f;  // Text placed on top of accent background (e.g. primary button label)
 
 
@@ -55,10 +55,10 @@ $font-accent:           'Lora', serif;        // Italic accent font — decorati
 // 🔤 TYPOGRAPHY — Font Sizes
 // ─────────────────────────────────────────
 
-$font-size-xs:          10px;  // Section labels (e.g. "01 · ABOUT"), tag text, letter-spaced labels
-$font-size-sm:          11px;  // Dates, role subtitles, status pill text, footer links
-$font-size-base:        12px;  // Card descriptions, nav links, button text, exp descriptions
-$font-size-md:          13px;  // Default body text size, hero sub-paragraph
+$font-size-xs:          11px;  // Section labels (e.g. "01 · ABOUT"), tag text, letter-spaced labels
+$font-size-sm:          12px;  // Dates, role subtitles, status pill text, footer links
+$font-size-base:        14px;  // Card descriptions, nav links, button text, exp descriptions
+$font-size-md:          16px;  // Default body text size, hero sub-paragraph
 $font-size-lg:          16px;  // Project card titles, experience company secondary text
 $font-size-xl:          18px;  // Company name in experience, logo text
 $font-size-2xl:         22px;  // Logo display size (alternate)
@@ -165,7 +165,7 @@ $dot-size-lg:           10px;  // Larger timeline dot in experience section
 // 📏 SIZING — Experience Timeline
 // ─────────────────────────────────────────
 
-$timeline-col-width:   160px;  // Width of the date/time column in the experience timeline
+$timeline-col-width:   185px;  // Width of the date/time column in the experience timeline
 
 
 // ─────────────────────────────────────────

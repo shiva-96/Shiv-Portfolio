@@ -17,6 +17,40 @@ body {
   height: 100%;
 }
 
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: cs.$font-body;
+  font-size: cs.$font-size-base;
+  line-height: cs.$line-height-normal;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(66, 245, 200, 0.045), transparent 42rem),
+    cs.$color-bg;
+}
+
+.section-intro {
+  max-width: 720px;
+  margin: 0 0 cs.$space-3xl;
+}
+
+.section-title {
+  margin: 0 0 cs.$space-md;
+  color: cs.$color-text-primary;
+  font-family: cs.$font-display;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: cs.$font-weight-bold;
+  letter-spacing: cs.$tracking-snug;
+  line-height: cs.$line-height-snug;
+}
+
+.section-description {
+  max-width: 680px;
+  margin: 0;
+  color: cs.$color-text-muted;
+  font-size: cs.$font-size-md;
+  line-height: cs.$line-height-relaxed;
+}
+
 // Material Component Overrides
 ::ng-deep {
   // Text color for all text elements

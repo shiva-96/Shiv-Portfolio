@@ -11,15 +11,15 @@ export class About {
   private readonly calExpService = inject(CalculateExpericeService);
 
   totalExp = signal(this.calExpService.calculateTotalExp());
-  aboutTitle = signal('About Me');
+  aboutTitle = signal('Building software that makes a difference');
   highlights = signal([
-    'Building scalable web applications',
-    'Creating responsive and accessible UIs',
-    'Writing clean, maintainable code',
-    'Collaborating with cross-functional teams',
+    'Resolved 40+ critical defects in an enterprise billing platform',
+    'Modernized legacy integrations with NestJS and AWS',
+    'Built geospatial analysis tools for DRDO-Chandigarh',
+    'Delivered across Angular, Node.js APIs, and cloud services',
   ]);
 
-  aboutDescription = computed(()=>{
-    return `Full-Stack Software Engineer with ${this.totalExp()}+ years of experience building scalable REST APIs, event-driven systems and enterprise web applications using NestJS, Node.js, Express.js, Angular and AWS (Lambda, SQS, SNS, DynamoDB, EventBridge, API Gateway). Experienced in migrating legacy integrations to serverless architecture, designing message-driven workflows and delivering zero-downtime production releases. Also delivered a geospatial web application for DRDO-Chandigarh across frontend and backend. Strong focus on clean architecture, performance, reliability and cross-team collaboration.`
+  aboutDescription = computed(() => {
+    return `I'm a full-stack software engineer with ${this.totalExp()}+ years of experience building Angular applications, Node.js and NestJS APIs, and event-driven systems on AWS. I turn complex business and technical requirements into dependable products: improving an enterprise billing platform by resolving 40+ critical defects, modernizing legacy integrations, and delivering geospatial analysis tools for DRDO-Chandigarh. I care about measurable outcomes, maintainable architecture, and making software simpler to use and support.`;
   });
 }

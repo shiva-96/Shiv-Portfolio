@@ -20,7 +20,7 @@ export class Projects {
       icon: '🗺',
       title: 'Geospatial Analysis Platform',
       description:
-        'A web application enabling spatial data analysis, map intersection calculations, and real-time geospatial visualization for defense research.',
+        'Built a full-stack mapping and analysis tool for DRDO-Chandigarh, bringing spatial data, intersection calculations, and interactive visualizations into one workflow.',
       badge: 'Full Stack',
       technologies: ['Angular', 'Node.js', 'Chart.js', 'PostgreSQL', 'GeoJSON', 'OpenLayer'],
     },
@@ -28,7 +28,7 @@ export class Projects {
       icon: '✈️',
       title: 'Heli Bhumi Platform',
       description:
-        'Redesigned and improved the UI/UX of the platform for better intuitiveness, with seamless backend integration and performance improvements.',
+        'Refined the platform interface and connected frontend flows with backend services, making key journeys clearer and smoother to use.',
       badge: 'UI/UX',
       technologies: ['JavaScript', 'CSS', 'HTML', 'Bootstrap'],
     },
@@ -36,7 +36,7 @@ export class Projects {
       icon: '📑',
       title: 'Enterprise Billing & Management System',
       description:
-        'An enterprise billing platform designed to streamline end-to-end billing operations through configurable workflows, dynamic forms, and automated business processes. Contributed to the development of billing modules, including Billing Process and DMR, dynamic form configurations, configurable dropdowns and validations, and user role-based access management. Developed and enhanced REST APIs for dynamic form updates and JSON-based data comparison, implemented editable and customizable grid features, optimized database queries, and resolved 40+ critical bugs to improve application performance, reliability, and overall user experience.',
+        'Contributed billing and DMR workflows for an enterprise platform, including configurable forms, validations, role-based access, and editable data grids. Expanded REST APIs, optimized database queries, and resolved 40+ critical defects to improve reliability and usability.',
       badge: 'Full Stack',
       technologies: ['Angular', 'Node.js', 'MongoDB', 'Angular Material', 'TypeScript', 'GDL'],
     },
@@ -44,7 +44,7 @@ export class Projects {
       icon: '☁️',
       title: 'MuleSoft to NestJS Migration & AWS Integration',
       description:
-        'Migrated legacy MuleSoft interfaces to NestJS using AWS services including SNS, SQS, Lambda, and DynamoDB. Developed scalable REST APIs and event-driven workflows, optimized legacy business logic, and implemented token caching to reduce repeated API calls. Improved reliability through automated testing, structured logging, and enhanced error handling while coordinating with clients and cross-functional teams for a smooth production rollout.',
+        'Migrated MuleSoft integrations to NestJS and AWS, building REST APIs and event-driven workflows with SNS, SQS, Lambda, and DynamoDB. Added token caching, automated tests, structured logging, and stronger error handling to support a reliable production rollout.',
       badge: 'Full Stack / Cloud',
       technologies: ['NestJS', 'Node.js', 'AWS Lambda', 'AWS SNS', 'AWS SQS', 'DynamoDB', 'REST APIs'],
     },

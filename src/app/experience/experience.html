@@ -5,6 +5,13 @@
       <div class="section-line"></div>
     </div>
 
+    <div class="section-intro">
+      <h2 class="section-title">Experience built through delivery</h2>
+      <p class="section-description">
+        A path across enterprise software, cloud integrations, and geospatial applications.
+      </p>
+    </div>
+
     <div class="exp-list">
       @for (exp of experiences(); track $index) {
         <div class="exp-item">
@@ -14,7 +21,10 @@
           </div>
           <div class="exp-content">
             <h3 class="exp-company">{{ exp.company }}</h3>
-            <p class="exp-role">{{ exp.role }}</p>
+            <div class="exp-meta">
+              <p class="exp-role">{{ exp.role }}</p>
+              <span class="exp-location">{{ exp.location }}</span>
+            </div>
             <p class="exp-desc">{{ exp.description }}</p>
             <div class="exp-tech">
               @for (tech of exp.technologies; track $index) {

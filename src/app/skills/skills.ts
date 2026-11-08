@@ -26,7 +26,7 @@ export class Skills {
     },
     {
       icon: '🗄️',
-      name: 'Data Bases',
+      name: 'Databases',
       tags: ['PostgreSQL', 'MongoDB'],
     },
     {
@@ -37,7 +37,7 @@ export class Skills {
     {
       icon: '🗺',
       name: 'Geospatial',
-      tags: ['OpenLayers', 'Geospatial', 'Geojson', 'Mapbox'],
+      tags: ['OpenLayers', 'Geospatial', 'GeoJSON', 'Mapbox'],
     }
   ]);
 }
