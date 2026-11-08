@@ -32,10 +32,6 @@
   background: cs.$color-border;
 }
 
-.about-content {
-  max-width: 700px;
-}
-
 .about-title {
   font-family: cs.$font-display;
   font-size: cs.$font-size-4xl;
@@ -55,7 +51,7 @@
 .about-highlights {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: cs.$space-2xl;
+  gap: cs.$space-md cs.$space-165xl;
 }
 
 .highlight-item {
