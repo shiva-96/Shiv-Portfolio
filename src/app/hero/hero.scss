@@ -1,11 +1,11 @@
 @use '../styles/common-style' as cs;
 
-.hero-section {
+.home-section {
   padding: cs.$space-3xl 0 cs.$section-gap;
   border-bottom: cs.$border-width solid cs.$color-border;
 }
 
-.hero {
+.home {
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: cs.$space-6xl;
@@ -15,13 +15,13 @@
   padding: cs.$page-padding-x cs.$page-padding-x;
 }
 
-.hero-left {
+.home-left {
   display: flex;
   flex-direction: column;
   gap: cs.$space-2xl;
 }
 
-.hero-tag {
+.home-tag {
   display: inline-flex;
   align-items: center;
   gap: cs.$space-sm;
@@ -44,7 +44,7 @@
   }
 }
 
-.hero-title {
+.home-title {
   font-family: cs.$font-display;
   font-size: cs.$font-size-6xl;
   font-weight: cs.$font-weight-black;
@@ -62,7 +62,7 @@
   }
 }
 
-.hero-description {
+.home-description {
   font-size: cs.$font-size-md;
   color: cs.$color-text-muted;
   line-height: cs.$line-height-relaxed;
@@ -71,7 +71,7 @@
   padding: cs.$space-lg 0;
 }
 
-.hero-actions {
+.home-actions {
   display: flex;
   gap: cs.$space-md;
   align-items: center;
@@ -123,7 +123,7 @@
   }
 }
 
-.hero-stats {
+.home-stats {
   display: flex;
   gap: cs.$space-5xl;
   padding-top: cs.$space-2xl;
@@ -149,7 +149,7 @@
 }
 
 // IMAGE SECTION
-.hero-image-wrap {
+.home-image-wrap {
   position: relative;
   display: flex;
   justify-content: center;
@@ -374,22 +374,22 @@
 
 // Responsive
 @media (max-width: 1024px) {
-  .hero {
+  .home {
     grid-template-columns: 1fr;
     gap: cs.$space-3xl;
   }
 
-  .hero-image-wrap {
+  .home-image-wrap {
     order: 0;
   }
 }
 
 @media (max-width: 640px) {
-  .hero-section {
+  .home-section {
     padding: cs.$space-3xl 0 cs.$space-4xl;
   }
 
-  .hero-title {
+  .home-title {
     font-size: cs.$font-size-4xl;
 
     em {
@@ -397,7 +397,7 @@
     }
   }
 
-  .hero-stats {
+  .home-stats {
     gap: cs.$space-3xl;
   }
 }

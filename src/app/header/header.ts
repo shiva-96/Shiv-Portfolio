@@ -31,7 +31,7 @@ export class Header {
   activeLink = signal('');
   mobileMenuOpen = signal(false);
   navLinks = signal([
-    { label: 'Home', value: 'hero' },
+    { label: 'Home', value: 'home' },
     { label: 'About', value: 'about' },
     { label: 'Skills', value: 'skills' },
     { label: 'Experience', value: 'experience' },
