@@ -21,7 +21,7 @@
     <div class="spacer"></div>
 
     <!-- Right Section -->
-    <div class="header-right">
+    <div class="header-right" [class]="{ 'header-right-gap': !isViewMobileTab() }">
       <!-- Status Chip -->
       <mat-chip-set aria-label="Status">
         <mat-chip class="status-chip">

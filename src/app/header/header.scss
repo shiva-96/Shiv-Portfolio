@@ -70,10 +70,12 @@
 .header-right {
   display: flex;
   align-items: center;
-  gap: cs.$space-md;
-  // gap: 10px;
   flex-shrink: 0;
   position: relative;
+}
+
+.header-right-gap{
+  gap: cs.$space-md;
 }
 
 ::ng-deep .status-chip {
