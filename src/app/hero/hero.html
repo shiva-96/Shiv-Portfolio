@@ -39,33 +39,39 @@
       </div>
     </div>
 
-    <!-- Hero Image -->
     <div class="home-image-wrap">
-      <div class="img-frame">
-        <div class="img-inner">
-          <!-- Placeholder Avatar -->
-          <div class="avatar-placeholder">
-            <img class="avtImage" [src]="heroImage()" alt="Shiv Prasad" />
-          </div>
-        </div>
-        <!-- Floating badges -->
-        <div class="open-to-work">
-          <mat-icon class="dot">fiber_manual_record</mat-icon>
-          <span class="availableClasss">Open to work</span>
-        </div> 
-        <div class="float-tag tag-1">TypeScript</div>
-        <div class="float-tag tag-2">
-          NestJS  🛠
-          <div class="aws-icon-container">
-            AWS ☁️
-          </div>
-        </div>
-        <div class="total-years-exp">
-          <span class="years">{{ totalExp() }}+</span>
-          <span class="exp">Yrs experience</span>
-        </div>
+      <div class="portrait-orbit" aria-hidden="true">
+        <span class="orbit-dot"></span>
       </div>
 
+      <div class="img-frame">
+        <div class="img-inner">
+          <div class="avatar-placeholder">
+            <img class="avtImage" [src]="heroImage()" alt="Illustrated professional avatar of Shiv Prasad" />
+          </div>
+          <div class="portrait-caption">
+            <span class="portrait-name">Shiv Prasad</span>
+            <span class="portrait-role">Software engineer</span>
+          </div>
+        </div>
+
+        <div class="open-to-work" aria-label="Currently open to work">
+          <span class="availability-dot" aria-hidden="true"></span>
+          <span>Open to work</span>
+        </div>
+
+        <div class="stack-card" aria-label="Technology stack">
+          <span class="stack-heading">MY TOOLKIT</span>
+          <span class="stack-item"><span class="stack-mark">TS</span>TypeScript</span>
+          <span class="stack-item"><span class="stack-mark nest-mark">N</span>NestJS</span>
+          <span class="stack-item"><span class="stack-mark aws-mark">a</span>AWS</span>
+        </div>
+
+        <div class="total-years-exp">
+          <span class="years">{{ totalExp() }}<span class="years-plus">+</span></span>
+          <span class="exp">years experience</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

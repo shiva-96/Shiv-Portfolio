@@ -21,7 +21,7 @@ export class Hero {
   heroTitle = signal('Engineering');
   heroHighlight = signal('reliable');
   heroSubtitle = signal('digital products.');
-  heroImage = signal('assets/images/My-Image.jpeg');
+  heroImage = signal('assets/images/professional-avatar.svg');
   description = computed(() => {
     return `I'm a full-stack software engineer with ${this.totalExp()}+ years of experience building clear, dependable web applications—from Angular interfaces to Node.js services on AWS.`;
   });
