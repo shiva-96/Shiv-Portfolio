@@ -150,7 +150,7 @@
 
   &:hover {
     border-color: cs.$color-accent;
-    background: rgba(200, 245, 66, 0.12);
+    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
   }
 }
 

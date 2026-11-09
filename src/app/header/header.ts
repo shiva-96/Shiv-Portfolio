@@ -8,6 +8,7 @@ import { headerLinks } from '../constant';
 import { Router } from '@angular/router';
 import { DownloadPdfService } from '../download-pdf-service';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-header',
@@ -25,6 +26,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 export class Header {
   private readonly router = inject(Router);
   private readonly downloadPdfService = inject(DownloadPdfService);
+  readonly themeService = inject(ThemeService);
 
   isViewMobileTab = signal(window.innerWidth <= 768);
   headerLinks = signal(headerLinks);

@@ -2,7 +2,7 @@
 
 .app-footer {
   border-top: cs.$border-width solid cs.$color-border;
-  background: rgba(10, 10, 15, 0.5);
+  background: cs.$header-bg-blur;
   backdrop-filter: blur(10px);
 }
 

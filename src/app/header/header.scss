@@ -52,12 +52,12 @@
 
     &:hover {
       color: cs.$color-text-primary;
-      background: rgba(200, 245, 66, 0.06);
+      background: cs.$color-accent-glow;
     }
 
     &.active {
       color: cs.$color-accent;
-      background: rgba(200, 245, 66, 0.06);
+      background: cs.$color-accent-glow;
       border-bottom: 2px solid cs.$color-accent;
     }
   }
@@ -131,6 +131,10 @@
 
 .menu-toggle {
   display: none;
+  color: cs.$color-text-primary;
+}
+
+.theme-toggle {
   color: cs.$color-text-primary;
 }
 

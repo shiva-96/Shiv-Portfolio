@@ -7,10 +7,10 @@
 // ─────────────────────────────────────────
 // 🎨 COLORS — Backgrounds
 // ─────────────────────────────────────────
-$body-html-bg:          #000000;  // Main page/body background
-$color-bg:              #0a0a0f;  // Main page/body background
-$color-surface:         #111118;  // Slightly lighter surface (e.g. code blocks, panels)
-$color-card:            #13131d;  // Card & section box backgrounds (skill cards, project cards)
+$body-html-bg:          var(--color-html-bg);  // Main page/body background
+$color-bg:              var(--color-bg);  // Main page/body background
+$color-surface:         var(--color-surface);  // Slightly lighter surface (e.g. code blocks, panels)
+$color-card:            var(--color-card);  // Card & section box backgrounds (skill cards, project cards)
 $color-error:           #7f1d1d;  // Error state background (e.g. invalid input, error message)
 $color-error-glow:      rgba(127, 29, 29, 0.08);  // Subtle error background glow (card hover bg)
 
@@ -18,28 +18,28 @@ $color-error-glow:      rgba(127, 29, 29, 0.08);  // Subtle error background glo
 // 🎨 COLORS — Accent (Primary Brand Color)
 // ─────────────────────────────────────────
 
-$color-accent:          #c8f542;  // Primary accent — CTAs, active nav, highlights, stat numbers
-$color-accent-hover:    #d4f760;  // Hover state of primary accent buttons
-$color-accent-secondary:#42f5c8;  // Secondary accent — role labels, tag in hero, secondary badges
-$color-accent-glow:     rgba(200, 245, 66, 0.08);  // Subtle accent background glow (card hover bg)
-$color-accent-border:   rgba(200, 245, 66, 0.20);  // Accent-tinted border on hover (card, nav item)
+$color-accent:          var(--color-accent);  // Primary accent — CTAs, active nav, highlights, stat numbers
+$color-accent-hover:    var(--color-accent-hover);  // Hover state of primary accent buttons
+$color-accent-secondary:var(--color-accent-secondary);  // Secondary accent — role labels, tag in hero, secondary badges
+$color-accent-glow:     var(--color-accent-glow);  // Subtle accent background glow (card hover bg)
+$color-accent-border:   var(--color-accent-border);  // Accent-tinted border on hover (card, nav item)
 
 
 // ─────────────────────────────────────────
 // 🎨 COLORS — Text
 // ─────────────────────────────────────────
 
-$color-text-primary:    #e8e8f0;  // Main readable body text, headings, nav links
-$color-text-muted:      #a3a3b8;  // Secondary/helper text — dates, labels, descriptions
-$color-text-on-accent:  #0a0a0f;  // Text placed on top of accent background (e.g. primary button label)
+$color-text-primary:    var(--color-text-primary);  // Main readable body text, headings, nav links
+$color-text-muted:      var(--color-text-muted);  // Secondary/helper text — dates, labels, descriptions
+$color-text-on-accent:  var(--color-text-on-accent);  // Text placed on top of accent background (e.g. primary button label)
 
 
 // ─────────────────────────────────────────
 // 🎨 COLORS — Borders
 // ─────────────────────────────────────────
 
-$color-border:          #1e1e2e;  // Default border for cards, dividers, nav items, inputs
-$color-border-hover:    rgba(200, 245, 66, 0.20);  // Border on hover state for interactive elements
+$color-border:          var(--color-border);  // Default border for cards, dividers, nav items, inputs
+$color-border-hover:    var(--color-accent-border);  // Border on hover state for interactive elements
 
 
 // ─────────────────────────────────────────
@@ -194,10 +194,10 @@ $radius-circle:         50%;    // Circular elements — dots, avatar head
 // 🌑 SHADOWS & EFFECTS
 // ─────────────────────────────────────────
 
-$shadow-accent-glow:    0 0 8px rgba(200, 245, 66, 0.4);   // Glow on timeline dot, active indicators
+$shadow-accent-glow:    var(--shadow-accent-glow);          // Glow on timeline dot, active indicators
 $shadow-card-hover:     0 8px 32px rgba(0, 0, 0, 0.3);    // Elevated shadow on card hover
 $backdrop-blur:         blur(14px);                         // Header backdrop blur (glassmorphism)
-$header-bg-blur:        rgba(10, 10, 15, 0.85);            // Semi-transparent header background
+$header-bg-blur:        var(--header-bg-blur);              // Semi-transparent header background
 
 
 // ─────────────────────────────────────────
@@ -205,16 +205,16 @@ $header-bg-blur:        rgba(10, 10, 15, 0.85);            // Semi-transparent h
 // ─────────────────────────────────────────
 
 // Image frame gradient border (hero profile picture outer ring)
-$gradient-image-border: linear-gradient(135deg, #c8f542 0%, transparent 50%, #42f5c8 100%);
+$gradient-image-border: linear-gradient(135deg, var(--color-accent) 0%, transparent 50%, var(--color-accent-secondary) 100%);
 
 // Top accent line on card hover (::before pseudo-element)
-$gradient-card-top-line: linear-gradient(90deg, #c8f542, transparent);
+$gradient-card-top-line: linear-gradient(90deg, var(--color-accent), transparent);
 
 // Avatar/image placeholder background
-$gradient-avatar-bg:    linear-gradient(160deg, #181824 0%, #0e0e18 100%);
+$gradient-avatar-bg:    var(--gradient-avatar-bg);
 
 // Radial glow behind avatar in hero
-$gradient-accent-radial: radial-gradient(circle, rgba(200, 245, 66, 0.08) 0%, transparent 70%);
+$gradient-accent-radial: var(--gradient-accent-radial);
 
 
 // ─────────────────────────────────────────

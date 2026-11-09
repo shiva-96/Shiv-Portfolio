@@ -30,6 +30,17 @@
         </mat-chip>
       </mat-chip-set>
 
+      <button
+        mat-icon-button
+        class="theme-toggle"
+        [matTooltip]="themeService.theme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+        matTooltipClass="contact-tooltip"
+        [attr.aria-label]="themeService.theme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+        (click)="themeService.toggleTheme()"
+      >
+        <mat-icon>{{ themeService.theme() === 'dark' ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      </button>
+
       <!-- Resume Button -->
       @if (isViewMobileTab()) {
         <mat-icon (click)="downloadResume()">download</mat-icon>

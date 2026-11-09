@@ -7,8 +7,92 @@
 // Include Material Core
 @include mat.core();
 
-// Note: Custom theming is handled via common-style.scss design tokens
-// Material components will use default dark theme with custom CSS overrides
+:root,
+:root[data-theme='dark'] {
+  @include mat.theme((
+    color: (
+      theme-type: dark,
+      primary: mat.$chartreuse-palette,
+      tertiary: mat.$spring-green-palette,
+    ),
+    typography: (
+      plain-family: 'DM Mono',
+      brand-family: 'Syne',
+    ),
+    density: 0,
+  ));
+
+  color-scheme: dark;
+  --color-html-bg: #000000;
+  --color-bg: #0a0a0f;
+  --color-surface: #111118;
+  --color-card: #13131d;
+  --color-accent: #c8f542;
+  --color-accent-hover: #d4f760;
+  --color-accent-secondary: #42f5c8;
+  --color-accent-glow: rgba(200, 245, 66, 0.08);
+  --color-accent-border: rgba(200, 245, 66, 0.2);
+  --color-text-primary: #e8e8f0;
+  --color-text-muted: #a3a3b8;
+  --color-text-on-accent: #0a0a0f;
+  --color-border: #1e1e2e;
+  --shadow-accent-glow: 0 0 8px rgba(200, 245, 66, 0.4);
+  --header-bg-blur: rgba(10, 10, 15, 0.85);
+  --page-glow: rgba(66, 245, 200, 0.045);
+  --gradient-avatar-bg: linear-gradient(160deg, #181824 0%, #0e0e18 100%);
+  --gradient-avatar-head: linear-gradient(135deg, #2a2a3e, #1e1e2e);
+  --gradient-avatar-body: linear-gradient(160deg, #1e1e30 0%, #141420 100%);
+  --mat-sys-primary: var(--color-accent);
+  --mat-sys-on-primary: var(--color-text-on-accent);
+  --mat-sys-surface: var(--color-surface);
+  --mat-sys-on-surface: var(--color-text-primary);
+  --mat-sys-outline: var(--color-border);
+  --mat-sys-surface-container: var(--color-card);
+  --mat-sys-surface-container-high: var(--color-surface);
+}
+
+:root[data-theme='light'] {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$chartreuse-palette,
+      tertiary: mat.$spring-green-palette,
+    ),
+    typography: (
+      plain-family: 'DM Mono',
+      brand-family: 'Syne',
+    ),
+    density: 0,
+  ));
+
+  color-scheme: light;
+  --color-html-bg: #f7f8f4;
+  --color-bg: #f7f8f4;
+  --color-surface: #ffffff;
+  --color-card: #ffffff;
+  --color-accent: #527400;
+  --color-accent-hover: #3e5b00;
+  --color-accent-secondary: #087c62;
+  --color-accent-glow: rgba(82, 116, 0, 0.08);
+  --color-accent-border: rgba(82, 116, 0, 0.24);
+  --color-text-primary: #20251b;
+  --color-text-muted: #555d4c;
+  --color-text-on-accent: #ffffff;
+  --color-border: #dce1d4;
+  --shadow-accent-glow: 0 0 8px rgba(82, 116, 0, 0.2);
+  --header-bg-blur: rgba(247, 248, 244, 0.88);
+  --page-glow: rgba(8, 124, 98, 0.06);
+  --gradient-avatar-bg: linear-gradient(160deg, #eff2e9 0%, #e4e9dc 100%);
+  --gradient-avatar-head: linear-gradient(135deg, #e0e7d5, #d2ddc2);
+  --gradient-avatar-body: linear-gradient(160deg, #e5ebdf 0%, #d8e1d0 100%);
+  --mat-sys-primary: var(--color-accent);
+  --mat-sys-on-primary: var(--color-text-on-accent);
+  --mat-sys-surface: var(--color-surface);
+  --mat-sys-on-surface: var(--color-text-primary);
+  --mat-sys-outline: var(--color-border);
+  --mat-sys-surface-container: var(--color-card);
+  --mat-sys-surface-container-high: var(--color-surface);
+}
 
 html,
 body {
@@ -24,7 +108,7 @@ body {
   font-size: cs.$font-size-base;
   line-height: cs.$line-height-normal;
   background:
-    radial-gradient(ellipse at 50% 0, rgba(66, 245, 200, 0.045), transparent 42rem),
+    radial-gradient(ellipse at 50% 0, var(--page-glow), transparent 42rem),
     cs.$color-bg;
 }
 
@@ -131,11 +215,11 @@ body {
 }
 
 .eligibility-snackbar .mdc-snackbar__surface {
-  --mdc-snackbar-container-color: #111118;
+  --mdc-snackbar-container-color: cs.$color-surface;
   min-height: 56px;
   border: 0px solid #ef4444;
   border-radius: 10px;
-  background-color: #111118 !important;
+  background-color: cs.$color-surface !important;
   box-shadow: inset 0 0 40px rgba(127, 29, 29, 0.35);
 }
 
@@ -144,7 +228,7 @@ body {
 }
 
 .eligibility-snackbar .mdc-snackbar__label {
-  color: #fee2e2;
+  color: cs.$color-text-primary;
   font-family: cs.$font-body;
   font-size: cs.$font-size-base;
   line-height: 1.5;
@@ -160,7 +244,7 @@ body {
   border-radius: 50%;
   background-color: transparent !important;
   --mat-text-button-state-layer-color: transparent;
-  color: #fca5a5;
+  color: cs.$color-text-muted;
   font-size: 24px;
   line-height: 1;
 

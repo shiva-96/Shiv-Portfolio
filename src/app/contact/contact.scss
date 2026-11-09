@@ -91,7 +91,7 @@
   &:hover {
     border-color: cs.$color-accent !important;
     color: cs.$color-accent !important;
-    background: rgba(200, 245, 66, 0.06) !important;
+    background: cs.$color-accent-glow !important;
 
     .link-arrow {
       transform: translateX(4px) translateY(-4px);
