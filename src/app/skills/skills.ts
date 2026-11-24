@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { SkillCardComponent, Skill } from '../shared/skill-card/skill-card';
+import { ActiveSectionDirective } from '../active-section.directive';
 
 @Component({
   selector: 'app-skills',
-  imports: [SkillCardComponent],
+  imports: [SkillCardComponent, ActiveSectionDirective],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })

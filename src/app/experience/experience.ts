@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import { ActiveSectionDirective } from '../active-section.directive';
 
 export interface ExperienceStructure {
   date: string;
@@ -11,6 +12,7 @@ export interface ExperienceStructure {
 
 @Component({
   selector: 'app-experience',
+  imports: [ActiveSectionDirective],
   templateUrl: './experience.html',
   styleUrl: './experience.scss',
 })

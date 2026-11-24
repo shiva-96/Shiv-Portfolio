@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ActiveSectionDirective } from '../active-section.directive';
 
 export interface ContactLink {
   icon: string;
@@ -13,7 +14,7 @@ export interface ContactLink {
 
 @Component({
   selector: 'app-contact',
-  imports: [MatButtonModule, MatIconModule, MatTooltipModule],
+  imports: [MatButtonModule, MatIconModule, MatTooltipModule, ActiveSectionDirective],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

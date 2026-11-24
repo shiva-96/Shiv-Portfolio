@@ -4,10 +4,11 @@ import { ProjectInterface } from '../shared/project-card/project-card';
 import { ValidateUser } from '../shared/validate-user/validate-user';
 import { Dialog } from '@angular/cdk/dialog';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { ActiveSectionDirective } from '../active-section.directive';
 
 @Component({
   selector: 'app-projects',
-  imports: [ProjectCardComponent, MatSnackBarModule],
+  imports: [ProjectCardComponent, MatSnackBarModule, ActiveSectionDirective],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })

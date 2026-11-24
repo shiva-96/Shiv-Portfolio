@@ -1,8 +1,10 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { CalculateExpericeService } from '../calculate-experice-service';
+import { ActiveSectionDirective } from '../active-section.directive';
 
 @Component({
   selector: 'app-about',
+  imports: [ActiveSectionDirective],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })

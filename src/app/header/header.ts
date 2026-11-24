@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { DownloadPdfService } from '../download-pdf-service';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ThemeService } from '../theme.service';
+import { ActiveSectionService } from '../active-section.service';
 
 @Component({
   selector: 'app-header',
@@ -27,10 +28,11 @@ export class Header {
   private readonly router = inject(Router);
   private readonly downloadPdfService = inject(DownloadPdfService);
   readonly themeService = inject(ThemeService);
+  private readonly activeSectionService = inject(ActiveSectionService);
 
   isViewMobileTab = signal(window.innerWidth <= 768);
   headerLinks = signal(headerLinks);
-  activeLink = signal('');
+  activeLink = this.activeSectionService.activeSection;
   mobileMenuOpen = signal(false);
   navLinks = signal([
     { label: 'Home', value: 'home' },
@@ -42,7 +44,7 @@ export class Header {
   ]);
 
   setActiveLink(section: string) {
-    this.activeLink.set(section);
+    this.activeSectionService.setActiveSection(section);
     this.mobileMenuOpen.set(false);
     void this.router.navigate([], { fragment: section });
   }
@@ -51,21 +53,4 @@ export class Header {
     this.downloadPdfService.downloadResume();
   }
 
-  ngAfterViewInit() {
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            this.activeLink.set(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.6
-      }
-    );
-
-    sections.forEach(section => observer.observe(section));
-  }
 }

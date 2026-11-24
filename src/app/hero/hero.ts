@@ -5,10 +5,11 @@ import { MatChipsModule } from '@angular/material/chips';
 import { Router } from '@angular/router';
 import { DownloadPdfService } from '../download-pdf-service';
 import { CalculateExpericeService } from '../calculate-experice-service';
+import { ActiveSectionDirective } from '../active-section.directive';
 
 @Component({
   selector: 'app-hero',
-  imports: [MatButtonModule, MatIconModule, MatChipsModule],
+  imports: [MatButtonModule, MatIconModule, MatChipsModule, ActiveSectionDirective],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
