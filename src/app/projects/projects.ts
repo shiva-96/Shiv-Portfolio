@@ -48,6 +48,14 @@ export class Projects {
       badge: 'Full Stack / Cloud',
       technologies: ['NestJS', 'Node.js', 'AWS Lambda', 'AWS SNS', 'AWS SQS', 'DynamoDB', 'REST APIs'],
     },
+    {
+      icon: '📦',
+      title: 'Inventory & User Management Platform',
+      description:
+        'Developed a full-stack inventory and user management platform using Angular, Node.js, Express.js, and MongoDB. Built secure REST APIs with JWT authentication and password hashing, protected inventory CRUD operations, and an analytics dashboard for inventory search, total items, average price, and category distribution. Created responsive tables, user creation flows, API integrations, and dynamic routing.',
+      badge: 'Full Stack',
+      technologies: ['Angular', 'Node.js', 'Express.js', 'MongoDB', 'Angular Material', 'JWT', 'REST APIs'],
+    }
   ]);
 
   addMoreProject() {

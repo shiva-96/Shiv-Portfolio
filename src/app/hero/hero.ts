@@ -23,13 +23,12 @@ export class Hero {
   heroSubtitle = signal('digital products.');
   heroImage = signal('assets/images/professional-avatar.svg');
   description = computed(() => {
-    return `I'm a full-stack software engineer with ${this.totalExp()}+ years of experience building clear, dependable web applications—from Angular interfaces to Node.js services on AWS.`;
+    return `I'm a Full-Stack Software Engineer with ${this.totalExp()}+ years of experience designing and building scalable, reliable web applications. I enjoy working across the entire development lifecycle, from creating intuitive user experiences to developing backend systems, APIs, and cloud-based solutions. With experience in technologies like Angular, React, Node.js, NestJS, and AWS, I also leverage Generative AI tools to accelerate development, explore solutions, improve code quality, and solve complex engineering challenges. I'm always curious about emerging technologies and focused on building software that is clean, maintainable, and built to last.`
   });
   stats = computed(() => {
     return [
       { number: `${this.totalExp()}+`, label: 'Years Experience' },
-      { number: '5+', label: 'Projects Completed' },
-      { number: '10+', label: 'Happy Clients' },
+      { number: '5+', label: 'Projects Completed' }
     ];
   });
 
